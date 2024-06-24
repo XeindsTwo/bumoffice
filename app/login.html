@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="html" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание сайта">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <meta name="theme-color" content="#fff">
+  <title>Вход в аккаунт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="body">
+<header w3-include-html="../html/components/header.html"></header>
+<div class="subheader" w3-include-html="../html/components/subheader.html"></div>
+<body>
+<main>
+  <section class="auth">
+    <div class="auth__top">
+      Logo
+    </div>
+    <div class="container">
+      <form class="auth__content" method="post">
+        <h1 class="auth__title">Вход в аккаунт</h1>
+        <div class="auth__fields">
+          <label>
+            <input class="input input--white" id="login" name="login" type="text"
+                   required placeholder="Ваш логин" maxlength="240">
+          </label>
+          <label>
+            <input class="input input--white" id="password" name="password" type="password"
+                   required placeholder="Ваш пароль" maxlength="240">
+          </label>
+        </div>
+        <div class="auth__actions">
+          <a class="auth__link" href="registration.html">Нет аккаунта? Тогда зарегистрируйтесь</a>
+          <a class="auth__link" href="">Забыли пароль?</a>
+        </div>
+        <button class="auth__btn" type="submit">Войти в аккаунт</button>
+      </form>
+    </div>
+  </section>
+</main>
+</body>
+<script src="js/phone-mask.js" defer></script>

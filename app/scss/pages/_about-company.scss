@@ -1,0 +1,40 @@
+.about {
+  margin-bottom: 120px;
+  @include r($lg) {
+    margin-bottom: 100px;
+  }
+  @include r($sm) {
+    margin-bottom: 80px;
+  }
+
+  &__text {
+    max-width: 880px;
+    margin-bottom: 40px;
+    @include r($tablet) {
+      margin-bottom: 25px;
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 15px;
+    width: 100%;
+    @include r($lg) {
+      height: 350px;
+    }
+    @include r($tablet) {
+      height: 330px;
+    }
+    @include r($sm) {
+      height: 315px;
+    }
+    @include r($phone) {
+      border-radius: 11px;
+      height: 270px;
+    }
+  }
+}

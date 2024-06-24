@@ -1,0 +1,139 @@
+.auth {
+  &__top {
+    border-bottom: 1px solid $gray-two;
+    font-size: 48px;
+    text-align: center;
+    padding: 19px 0;
+    font-weight: 700;
+    margin-bottom: 100px;
+    @media (max-width: 1300px) {
+      margin-bottom: 70px;
+    }
+    @include r($tablet) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: 700px) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    padding: 40px 50px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: $persik;
+    border-radius: 20px;
+    @media (max-width: 1100px) {
+      padding: 35px 40px;
+    }
+    @media (max-width: 700px) {
+      padding: 35px 30px;
+    }
+    @media (max-width: 540px) {
+      border-radius: 15px;
+    }
+    @include r($phone) {
+      margin: 0 -10px;
+      padding: 30px 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 30px;
+    @include r($lg) {
+      font-size: 28px;
+    }
+    @media (max-width: 540px) {
+      font-size: 26px;
+    }
+    @media (max-width: 400px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__fields {
+    @include flex-column(17);
+    margin-bottom: 28px;
+    @include r($lg) {
+      gap: 12px;
+    }
+  }
+
+  &__actions {
+    @include flex-between(20);
+    flex-wrap: wrap;
+    margin-bottom: 13px;
+    @media (max-width: 620px) {
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 2px 1px;
+    transition: color .4s, border .4s, opacity .4s;
+    max-width: max-content;
+    @include r($phone) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      border-color: $gold;
+      opacity: 1;
+
+      &::before {
+        width: 0;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      bottom: -1px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      transition: width .4s;
+      background-color: #4e2c15;
+    }
+  }
+
+  &__btn {
+    background: $gold;
+    color: $white;
+    border-radius: 10px;
+    padding: 17px 20px;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: color .4s, background-color .4s, border .4s;
+    @include r($phone) {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+      border-color: $gold;
+    }
+
+    &:focus {
+      background-color: $black;
+      border-color: transparent;
+      color: $white;
+    }
+  }
+}

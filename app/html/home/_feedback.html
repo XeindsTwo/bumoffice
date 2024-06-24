@@ -1,0 +1,26 @@
+<section class="feedback indent">
+  <div class="container">
+    <form class="feedback__wrapper" action="#">
+      <h2 class="feedback__title title-section">Форма обратной связи</h2>
+      <div class="feedback__list">
+        <label>
+          <input class="input" id="name" name="name"
+                 type="text" required placeholder="Как к вам обращаться?" maxlength="240">
+        </label>
+        <label>
+          <input class="input" id="email" name="email" type="email"
+                 required placeholder="Ваша электронная почта" maxlength="240">
+        </label>
+        <label>
+          <input class="input" type="text" name="phone" id="phone" data-tel-input required
+                 placeholder="Ваш номер телефона" maxlength="30">
+        </label>
+        <label>
+          <textarea class="input input--textarea" name="message" id="message" required maxlength="2000"
+                    placeholder="Что вас интересует? (Необязательно)"></textarea>
+        </label>
+      </div>
+      <button class="feedback__btn" type="submit">Отправить заявку</button>
+    </form>
+  </div>
+</section>

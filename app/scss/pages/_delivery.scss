@@ -1,0 +1,73 @@
+.delivery {
+  margin-bottom: 80px;
+
+  &__blocks {
+    @include flex-column(70);
+    @include r($tablet) {
+      gap: 60px;
+    }
+    @include r($phone) {
+      gap: 50px;
+    }
+  }
+
+  &__subtitle {
+    @include flex-align-center(8);
+    font-weight: 500;
+    margin-bottom: 25px;
+    font-size: 18px;
+    @include r($tablet) {
+      margin-bottom: 20px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+      gap: 7px;
+    }
+
+    img {
+      user-select: none;
+      @include r($phone) {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  &__text {
+    @include flex-column(20);
+    line-height: 1.6;
+    font-size: 18px;
+    max-width: 1100px;
+    @include r($lg) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    gap: 10px;
+  }
+
+  &__list {
+    @include flex-column(10);
+    max-width: 1100px;
+    line-height: 1.6;
+    counter-reset: ol-counter;
+
+    li {
+      counter-increment: ol-counter;
+      position: relative;
+      display: table;
+
+      &::before {
+        content: counters(ol-counter, ".") ".";
+        display: inline-table;
+        font-weight: 600;
+        padding-right: 5px;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@include('components/_head.html', {
+title: 'О компании'
+})
+<header w3-include-html="../html/components/header.html"></header>
+<div class="subheader" w3-include-html="../html/components/subheader.html"></div>
+<body>
+<main>
+  <section class="about">
+    <div class="container">
+      <h1 class="title">О компании</h1>
+      <p class="about__text">
+        <span>BumOffice</span> - один из крупнейших оптовых поставщиков канцтоваров, игрушек
+        и кожгалантереи на юге России. За более чем 27-летний период существования компании налажены прочные
+        связи с ведущими отечественными и зарубежными производителями: Hatber, Lori, Mazari, Globus, Pensan,
+        Луч и другими. На складах компании в широком ассортименте представлена самая разнообразная продукция для
+        школы и офиса. Наши покупатели всегда смогут выбрать игрушки для детей всех возрастов: товары для детского
+        творчества, конструкторы, настольные игры, головоломки, пазлы, кукол и наборы для девочек, мягкие игрушки.
+        Не забыты и товары для активного отдыха - велосипеды, самокаты, каталки, тележки. Также осуществляются оптовые
+        поставки искусственных цветов, оформительской праздничной и новогодней продукции. Выбор огромен!
+      </p>
+      <img class="about__img" src="images/about.webp" height="380" alt="о компании BumOffice">
+    </div>
+  </section>
+</main>
+@include('components/_footer.html')
+</body>
+<script src="js/phone-mask.js" defer></script>

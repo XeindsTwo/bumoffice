@@ -1,0 +1,68 @@
+.input {
+  padding: 23px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+  border-radius: 20px;
+  background-color: $blocks;
+  letter-spacing: -0.14px;
+  border: 1px solid transparent;
+  transition: all .4s;
+  @media (max-width: 540px) {
+    border-radius: 15px;
+    padding: 20px;
+  }
+  @include r($phone) {
+    font-size: 14px;
+    padding: 20px 15px;
+  }
+
+  &:hover {
+    border-color: $gold;
+    background-color: transparent;
+  }
+
+  &:focus {
+    border-color: $gold;
+    background-color: rgba($gold, .07);
+
+    &::placeholder {
+      color: $black;
+    }
+  }
+
+  &::placeholder {
+    transition: color .4s;
+    color: rgba($black, .6);
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    -webkit-box-shadow: inset 0 0 0 50px $blocks;
+    -webkit-text-fill-color: $black;
+  }
+
+  &--white {
+    background-color: $white;
+
+    &:hover {
+      &::placeholder {
+        color: $black;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:hover {
+      -webkit-box-shadow: inset 0 0 0 50px $white;
+      -webkit-text-fill-color: $black;
+    }
+  }
+
+  &--textarea {
+    min-height: 205px;
+    max-height: 205px;
+    resize: none;
+  }
+}

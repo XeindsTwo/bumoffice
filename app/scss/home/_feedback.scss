@@ -1,0 +1,41 @@
+.feedback {
+  margin-bottom: 80px;
+
+  &__wrapper {
+    border-radius: 20px;
+    padding: 50px 50px 30px;
+    border: 1px solid $gray-two;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    @include flex-column(17);
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    background: $gold;
+    color: $white;
+    border-radius: 10px;
+    padding: 17px 20px;
+    width: 100%;
+    border: 1px solid transparent;
+    transition: color .4s, background-color .4s, border .4s;
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+      border-color: $gold;
+    }
+
+    &:focus {
+      background-color: $black;
+      border-color: transparent;
+      color: $white;
+    }
+  }
+}

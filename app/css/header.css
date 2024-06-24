@@ -1,0 +1,60 @@
+header {
+    padding: 19.5px;
+    border-bottom: 1px solid var(--gray-two);
+}
+
+.header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__wrapper button {
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header__wrapper button::before {
+    content: "";
+    background: url("/images/user.svg") no-repeat;
+    width: 26px;
+    height: 26px;
+    display: block;
+}
+
+.header__wrapper button:hover {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.header__wrapper button:hover::before {
+    background: url("/images/userHover.svg") no-repeat;
+}
+
+.subheader {
+    background: rgba(255, 161, 50, 0.12);
+    padding: 26.5px 0;
+}
+
+.subheader_list {
+    display: flex;
+    gap: 97px;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--black);
+}
+
+.subheader_list li a {
+    transition: all .3s;
+    padding-bottom: 15px;
+    border-bottom: 1px solid transparent;
+}
+
+.subheader_list li a:hover {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold);
+}
