@@ -2,16 +2,48 @@
   background-color: $black;
   padding: 50px 0 60px;
   color: $white;
+  @include r($lg) {
+    padding: 40px 0;
+  }
+  @media (max-width: 550px) {
+    padding: 35px 0 30px;
+  }
 
   &__nav {
     margin-bottom: 60px;
     border-radius: 20px;
     background-color: $blocks;
     padding: 20px 90px;
+    @media (max-width: 1270px) {
+      padding: 22px 50px;
+    }
+    @media (max-width: 1000px) {
+      border-radius: 16px;
+      padding: 22px 30px;
+    }
+    @media (max-width: 660px) {
+      padding: 23px 20px;
+    }
+    @media (max-width: 550px) {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
     @include flex-between(80);
+    @media (max-width: 1160px) {
+      gap: 50px;
+    }
+    @media (max-width: 980px) {
+      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+    @media (max-width: 660px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
   }
 
   &__link {
@@ -22,6 +54,9 @@
     position: relative;
     padding: 2px;
     transition: border .4s;
+    @media (max-width: 540px) {
+      font-size: 16px;
+    }
 
     &:hover {
       &::before {
@@ -54,15 +89,29 @@
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 1.3;
+    @include r($tablet) {
+      font-size: 26px;
+    }
   }
 
   &__bottom {
     @include flex-between(60);
+    flex-wrap: wrap;
+    gap: 25px 45px;
+    @include r($lg) {
+      justify-content: flex-start;
+    }
   }
 
   &__item {
     @include flex-align-center(10);
     font-size: 18px;
+    @include r($tablet) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
 
     &-link {
       border-radius: 4px;
