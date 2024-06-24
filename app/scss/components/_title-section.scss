@@ -2,6 +2,24 @@
   font-size: 36px;
   font-weight: 600;
   line-height: 1.2;
+  @include r($desktop) {
+    font-size: 34px;
+  }
+  @include r($lg) {
+    font-size: 32px;
+  }
+  @media (max-width: 810px) {
+    font-size: 30px;
+  }
+  @media (max-width: 660px) {
+    font-size: 28px;
+  }
+  @include r($sm) {
+    font-size: 26px;
+  }
+  @include r($phone) {
+    font-size: 25px;
+  }
 }
 
 .title {

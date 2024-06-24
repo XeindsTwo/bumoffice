@@ -6,6 +6,22 @@
     padding: 50px 50px 30px;
     border: 1px solid $gray-two;
     width: 100%;
+    @include r($desktop) {
+      padding: 40px 40px 30px;
+    }
+    @media (max-width: 1100px) {
+      padding: 40px 30px 30px;
+    }
+    @include r($tablet) {
+      margin: 0 -5px;
+      border-radius: 16px;
+      width: auto;
+      padding: 40px 25px 30px;
+    }
+    @include r($phone) {
+      padding: 30px 17px 25px;
+      border-radius: 12px;
+    }
   }
 
   &__title {
@@ -15,6 +31,9 @@
   &__list {
     @include flex-column(17);
     margin-bottom: 20px;
+    @media (max-width: 810px) {
+      gap: 10px;
+    }
   }
 
   &__btn {
