@@ -1,0 +1,123 @@
+.home-catalog {
+  &__inner {
+    @include flex-align-center(35);
+  }
+
+  &__subtitle {
+    @include flex-align-center(8);
+    margin-bottom: 40px;
+    font-weight: 500;
+    font-size: 24px;
+
+    img {
+      user-select: none;
+    }
+  }
+
+  &__categories {
+    border-radius: 20px;
+    border: 1px solid $gray-two;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
+  }
+
+  &__item {
+    @include flex-column(0);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background-color: $blocks;
+
+    img {
+      @include objectCoverBg;
+      width: 100%;
+      margin: 0 auto;
+      user-select: none;
+    }
+  }
+
+  &__content {
+    padding: 20px 15px;
+    height: 100%;
+    @include flex-column(0);
+  }
+
+  &__price {
+    border-radius: 13px;
+    background-color: rgba($gold, .4);
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    max-width: max-content;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__more {
+    @include flex-center;
+    padding: 16px;
+    width: 100%;
+    margin-top: auto;
+    background-color: $black;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: $white;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $black;
+      color: $black;
+    }
+
+    &:focus {
+      background-color: $gold;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+
+  &__categories {
+    max-width: 370px;
+    padding: 30px 20px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    display: flex;
+    background-color: #FFF3E6;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    font-weight: 500;
+    padding: 20px;
+    line-height: 1;
+    transition: background-color .4s, color .4s, border .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: #4e2c15;
+    }
+
+    &:focus {
+      background-color: rgba($gold, .7);
+      border-color: transparent;
+    }
+  }
+}

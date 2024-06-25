@@ -1,127 +1,15 @@
 @include('components/_head.html', {
-title: 'Канцелярские товары'
+title: 'БумОфис | Магазин канцелярии'
 })
-<header w3-include-html="../html/components/header.html"></header>
-<div class="subheader" w3-include-html="../html/components/subheader.html"></div>
 <body>
+@include('components/_header.html')
 <main>
-  <div class="container">
-    <section class="splide" aria-label="Splide Basic HTML Example">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <li class="splide__slide">
-            <img src="../images/slide1.webp" alt="slide">
-          </li>
-          <li class="splide__slide">
-            <img src="../images/slide2.png" alt="slide">
-          </li>
-          <li class="splide__slide">
-            <img src="../images/slide3.jpg" alt="slide">
-          </li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <section class="ProductsAndCategories">
-    <div class="container">
-      <div class="ProductsAndCategories__wrapper">
-        <div class="Products">
-          <h1 class="subtitle">Товары</h1>
-          <ul class="Products_list">
-            <li>
-              <img src="../images/pr-1.png" alt="product" class="Products_img">
-              <div class="Products_info">
-                <p class="Products_cost">123₽</p>
-                <p class="Products_description">Ручка шариковая автоматическая Pilot BPGP-10R-F синяя
-                  (толщина
-                  линии 0.22 мм)</p>
-                <button class="Products_more">Подробнее</button>
-              </div>
-            </li>
-            <li>
-              <img src="../images/pr-1.png" alt="product" class="Products_img">
-              <div class="Products_info">
-                <p class="Products_cost">123₽</p>
-                <p class="Products_description">Ручка шариковая автоматическая Pilot BPGP-10R-F синяя
-                  (толщина
-                  линии 0.22 мм)</p>
-                <button class="Products_more">Подробнее</button>
-              </div>
-            </li>
-            <li>
-              <img src="../images/pr-1.png" alt="product" class="Products_img">
-              <div class="Products_info">
-                <p class="Products_cost">123₽</p>
-                <p class="Products_description">Ручка шариковая автоматическая Pilot BPGP-10R-F синяя
-                  (толщина
-                  линии 0.22 мм)</p>
-                <button class="Products_more">Подробнее</button>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="Categories">
-          <h1 class="subtitle">Бренды</h1>
-          <ul class="Categories_list">
-            <li>
-              <a href="#">
-                ACROSS
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                LOREX
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                КАЛЯКИ
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                HATBER
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                HATBER
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                ГЛОБУС
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                ГЕОДОМ
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                ФАНТАЗЕР
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                ВОЛШЕБНАЯ МАСТЕРСКАЯ
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                СТАММ
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  @include('home/_start.html')
+  @include('home/_home-catalog.html')
   @include('home/_assortment.html')
   @include('home/_feedback.html')
 </main>
 @include('components/_footer.html')
 </body>
+<script src="js/main.min.js" type="module"></script>
 <script src="js/phone-mask.js" defer></script>

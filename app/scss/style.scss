@@ -6,12 +6,13 @@
 @import 'vendor/global';
 
 @import "components/menu-btn";
-@import "components/btn";
 @import "components/footer";
 @import "components/header";
 @import "components/title-section";
 @import "components/form-elements";
 
+@import "home/start";
+@import "home/home-catalog";
 @import "home/assortment";
 @import "home/feedback";
 

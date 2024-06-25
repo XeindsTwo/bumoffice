@@ -1,3 +1,87 @@
 .header {
+  &__inner {
+    @include flex-between(30);
+    padding: 22px 0;
+    align-items: center;
+  }
 
+  &__navigation {
+    background-color: $blocks;
+  }
+
+  &__list {
+    @include flex-between-center-gap(80);
+    justify-content: center;
+    padding: 26px 0;
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    transition: color .4s;
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      color: #FA7800;
+
+      &::before {
+        width: 100%;
+        background-color: #FA7800;
+      }
+    }
+
+    &::before {
+      @include pseudo;
+      bottom: -4px;
+      left: 0;
+      background-color: $black;
+      height: 1px;
+      width: 0;
+      transition: width .4s, background-color .4s;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__right {
+    @include flex-align-center(8);
+  }
+
+  &__btn {
+    @include flex-align-center(10);
+    background-color: $gold;
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: $white;
+    border: 1px solid transparent;
+    transition: background-color .4s, color .4s, border .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $gold200;
+      color: $gold200;
+
+      svg path {
+        fill: $gold200;
+      }
+    }
+
+    &:focus {
+      background-color: rgba($gold200, .10);
+      border-color: $gold200;
+      color: $black;
+
+      svg path {
+        fill: $black;
+      }
+    }
+  }
 }

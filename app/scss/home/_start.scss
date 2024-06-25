@@ -1,0 +1,133 @@
+.start {
+  &__swiper {
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__slide {
+    position: relative;
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+
+    &::before {
+      @include pseudo;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      background-color: rgba($black, .6);
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    user-select: none;
+  }
+
+  &__content {
+    @include topLeft50;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    color: $white;
+  }
+
+  &__title {
+    font-size: 38px;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  &__text {
+    font-size: 20px;
+    opacity: .8;
+    margin-bottom: 30px;
+  }
+
+  &__link {
+    display: flex;
+    max-width: max-content;
+    margin: 0 auto;
+    background-color: $persik;
+    color: $black;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    backdrop-filter: blur(2px);
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: rgba($persik, .15);
+      border-color: $persik;
+      color: $white;
+    }
+
+    &:focus {
+      background-color: $gold200;
+      border-color: transparent;
+      color: $white;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px !important;
+    z-index: 20;
+
+    .swiper-pagination-bullet {
+      width: 9px;
+      height: 9px;
+      opacity: 1;
+      background-color: rgba($persik, .5);
+      transition: background-color .4s;
+
+      &-active {
+        background-color: $gold;
+      }
+    }
+  }
+
+  &__navigation {
+    @include flex-between(30);
+    width: 100%;
+    padding: 0 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  &__btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+    background-color: #eee;
+    backdrop-filter: blur(3px);
+    transition: all .4s;
+
+    &:hover {
+      background-color: rgba($gold, .15);
+      border-color: $gold;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      background-color: $gold;
+      border-color: transparent;
+
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+}

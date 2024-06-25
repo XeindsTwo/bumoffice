@@ -1,13 +1,23 @@
-import {setupMobileMenu} from "./mobileMenu.js";
+/*import {setupMobileMenu} from "./mobileMenu.js";
 
-setupMobileMenu();
+setupMobileMenu();*/
 
-new Swiper('.prizes__swiper', {
-  loop: false,
-  speed: 800,
+new Swiper('.start__swiper', {
+  speed: 700,
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 30,
+  autoplay: {
+    delay: 3000,
+    pauseOnMouseEnter: false
+  },
   navigation: {
-    prevEl: '.prizes__btn--prev',
-    nextEl: '.prizes__btn--next'
+    prevEl: '.start__btn--prev',
+    nextEl: '.start__btn--next'
+  },
+  pagination: {
+    type: 'bullets',
+    el: '.start__pagination'
   },
   keyboard: {
     enabled: true
