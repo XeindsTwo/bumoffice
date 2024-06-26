@@ -1,0 +1,70 @@
+.categories {
+  padding: 40px 0;
+  background-color: $blocks;
+
+  &__title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 18px 12px;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    @include flex-column(22);
+    position: relative;
+    min-height: 235px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: $white;
+    outline: 2px solid transparent;
+    cursor: pointer;
+    transition: color .4s, outline-color .4s;
+
+    &:hover {
+      color: $gold;
+
+      &::after {
+        background-color: $gold;
+        transform: rotate(225deg);
+      }
+    }
+
+    &:focus {
+      outline-color: $gold;
+    }
+
+    &::after {
+      @include pseudo;
+      width: 43px;
+      height: 43px;
+      border-radius: 10px;
+      background-color: $gray-two;
+      left: -30px;
+      top: 15px;
+      transform: rotate(45deg);
+      transition: background-color .4s, transform .4s;
+    }
+  }
+
+  &__name {
+    padding: 20px 30px 0;
+    position: relative;
+    font-size: 18px;
+    z-index: 10;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    object-position: top;
+    margin-left: auto;
+    margin-top: auto;
+    position: relative;
+    z-index: 10;
+  }
+}

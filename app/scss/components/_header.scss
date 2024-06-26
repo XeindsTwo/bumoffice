@@ -9,6 +9,53 @@
     background-color: $blocks;
   }
 
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 500px;
+    width: 100%;
+    padding: 6px 5px;
+    border-radius: 9px;
+    background-color: $blocks;
+
+    label {
+      width: 100%;
+    }
+
+    &-btn {
+      display: flex;
+      gap: 7px;
+      font-weight: 500;
+      line-height: 1;
+      max-width: max-content;
+      align-items: center;
+      justify-content: center;
+      background-color: $gold;
+      border-radius: 6px;
+      padding: 14px 25px;
+      transition: background-color .4s, border-color .4s, opacity .4s, color .4s;
+      border: 1px solid rgba(0, 0, 0, 0);
+      color: $white;
+
+      &:hover {
+        background-color: $gold200;
+      }
+
+      &:focus {
+        background-color: transparent;
+        border-color: $gold200;
+        color: $black;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 9px 0 9px 10px;
+  }
+
   &__list {
     @include flex-between-center-gap(80);
     justify-content: center;
