@@ -1,6 +1,10 @@
 .start {
   &__swiper {
     border-radius: 0 0 20px 20px;
+    @include r($desktop) {
+      margin: 0 -15px;
+      border-radius: 0 0 25px 25px;
+    }
   }
 
   &__slide {
@@ -24,6 +28,15 @@
     border-radius: 0 0 20px 20px;
     width: 100%;
     user-select: none;
+    @include r($desktop) {
+      height: 530px;
+    }
+    @include r($lg) {
+      height: 510px;
+    }
+    @media (max-width: 870px) {
+      height: 490px;
+    }
   }
 
   &__content {
@@ -32,18 +45,51 @@
     position: absolute;
     z-index: 10;
     color: $white;
+    @include r($lg) {
+      max-width: 450px;
+      width: 100%;
+    }
+    @media (max-width: 635px) {
+      max-width: 340px;
+    }
+    @media (max-width: 440px) {
+      max-width: 450px;
+    }
   }
 
   &__title {
     font-size: 38px;
     font-weight: 500;
     margin-bottom: 14px;
+    @include r($lg) {
+      font-size: 34px;
+    }
+    @media (max-width: 850px) {
+      font-size: 32px;
+    }
+    @media (max-width: 635px) {
+      font-size: 28px;
+    }
+    @media (max-width: 440px) {
+      font-size: 30px;
+    }
   }
 
   &__text {
     font-size: 20px;
     opacity: .8;
     margin-bottom: 30px;
+    @include r($lg) {
+      font-size: 18px;
+    }
+    @media (max-width: 635px) {
+      font-size: 16px;
+      max-width: 250px;
+      margin: 0 auto 30px;
+    }
+    @media (max-width: 440px) {
+      max-width: 450px;
+    }
   }
 
   &__link {
@@ -57,6 +103,9 @@
     border: 1px solid transparent;
     backdrop-filter: blur(2px);
     transition: background-color .4s, border .4s, color .4s;
+    @include r($tablet) {
+      padding: 18px;
+    }
 
     &:hover {
       background-color: rgba($persik, .15);
@@ -100,6 +149,15 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    @include r($desktop) {
+      padding: 0 20px;
+    }
+    @media (max-width: 850px) {
+      padding: 0 15px;
+    }
+    @media (max-width: 440px) {
+      display: none;
+    }
   }
 
   &__btn {
@@ -111,6 +169,22 @@
     background-color: #eee;
     backdrop-filter: blur(3px);
     transition: all .4s;
+    @include r($tablet) {
+      width: 46px;
+      height: 46px;
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+    @include r($phone) {
+      width: 43px;
+      height: 43px;
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
     &:hover {
       background-color: rgba($gold, .15);

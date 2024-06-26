@@ -6,7 +6,7 @@ new Swiper('.start__swiper', {
   speed: 700,
   loop: true,
   slidesPerView: 1,
-  spaceBetween: 30,
+  spaceBetween: 15,
   autoplay: {
     delay: 3000,
     pauseOnMouseEnter: false
@@ -22,4 +22,9 @@ new Swiper('.start__swiper', {
   keyboard: {
     enabled: true
   },
+  breakpoints: {
+    440: {
+      spaceBetween: 30
+    }
+  }
 });

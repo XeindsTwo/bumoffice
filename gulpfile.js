@@ -78,8 +78,8 @@ function browsersync() {
       baseDir: "app/"
     },
     online: true,
-/*    tunnel: true,
-    port: 8081,*/
+    tunnel: true,
+    port: 8081,
     notify: false
   });
 }

@@ -1,6 +1,15 @@
 .home-catalog {
   &__inner {
     @include flex-align-center(35);
+    @media (max-width: 1350px) {
+      gap: 20px;
+    }
+    @include r($desktop) {
+      flex-direction: column;
+    }
+    @media (max-width: 720px) {
+      align-items: flex-start;
+    }
   }
 
   &__subtitle {
@@ -8,6 +17,13 @@
     margin-bottom: 40px;
     font-weight: 500;
     font-size: 24px;
+    @media (max-width: 1280px) {
+      margin-bottom: 30px;
+    }
+    @include r($lg) {
+      font-size: 22px;
+      gap: 10px;
+    }
 
     img {
       user-select: none;
@@ -19,12 +35,28 @@
     border: 1px solid $gray-two;
     width: 100%;
     align-self: stretch;
+    @include r($tablet) {
+      border-radius: 14px;
+    }
+  }
+
+  &__products {
+    max-width: 100%;
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 8px;
+    @media (max-width: 740px) {
+      display: flex;
+      overflow-x: scroll;
+      margin: 0 -15px;
+      padding: 0 15px 15px;
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+    }
   }
 
   &__item {
@@ -33,12 +65,51 @@
     overflow: hidden;
     border: 1px solid transparent;
     background-color: $blocks;
+    @include r($tablet) {
+      border-radius: 14px;
+    }
+    @media (max-width: 740px) {
+      min-width: 300px;
+    }
+    @include r($sm) {
+      min-width: 280px;
+    }
+    @include r($phone) {
+      min-width: 260px;
+    }
 
     img {
       @include objectCoverBg;
       width: 100%;
       margin: 0 auto;
       user-select: none;
+    }
+  }
+
+  &__image {
+    img {
+      @include objectCoverBg;
+      @media (max-width: 1280px) {
+        height: 200px;
+      }
+      @include r($desktop) {
+        height: 310px;
+      }
+      @include r($lg) {
+        height: 280px;
+      }
+      @media (max-width: 940px) {
+        height: 250px;
+      }
+      @include r($tablet) {
+        height: 210px;
+      }
+      @media (max-width: 740px) {
+        height: 250px;
+      }
+      @include r($sm) {
+        height: 230px;
+      }
     }
   }
 
@@ -57,12 +128,22 @@
     display: block;
     max-width: max-content;
     margin-bottom: 20px;
+    @include r($lg) {
+      font-size: 14px;
+      padding: 9px 13px;
+    }
   }
 
   &__name {
     font-size: 18px;
     display: block;
     margin-bottom: 20px;
+    @media (max-width: 1280px) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
   }
 
   &__more {
@@ -75,6 +156,9 @@
     border: 1px solid transparent;
     color: $white;
     transition: background-color .4s, border .4s, color .4s;
+    @include r($lg) {
+      font-size: 14px;
+    }
 
     &:hover {
       background-color: transparent;
@@ -92,12 +176,24 @@
   &__categories {
     max-width: 370px;
     padding: 30px 20px;
+    @media (max-width: 1280px) {
+      max-width: 350px;
+    }
+    @include r($desktop) {
+      max-width: 100%;
+    }
+    @include r($phone) {
+      padding: 25px 18px;
+    }
   }
 
   &__list {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    @include r($desktop) {
+      max-width: 980px;
+    }
   }
 
   &__link {
@@ -109,6 +205,14 @@
     padding: 20px;
     line-height: 1;
     transition: background-color .4s, color .4s, border .4s;
+    @media (max-width: 1280px) {
+      padding: 17px;
+      border-radius: 12px;
+      font-size: 15px;
+    }
+    @include r($tablet) {
+      font-size: 14px;
+    }
 
     &:hover {
       background-color: transparent;
