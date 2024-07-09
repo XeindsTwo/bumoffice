@@ -10,6 +10,8 @@
 @import "components/header";
 @import "components/title-section";
 @import "components/form-elements";
+@import "components/custom-select";
+@import "components/custom-checkbox";
 
 @import "home/start";
 @import "home/categories";
@@ -20,3 +22,4 @@
 @import "pages/delivery";
 @import "pages/about-company";
 @import "pages/auth";
+@import "pages/catalog";

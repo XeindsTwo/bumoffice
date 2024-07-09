@@ -1,0 +1,196 @@
+@include('components/_head.html', {
+title: 'Каталог товаров'
+})
+@include('components/_header.html')
+<body>
+<main>
+  <section class="catalog">
+    <div class="container">
+      <div class="catalog__top">
+        <h1 class="catalog__title title title--bottom">Каталог товаров</h1>
+        <button class="catalog__filters-btn" id="catalog-filters-open" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false" tabindex="-1" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="none" stroke="#101010" stroke-width="2" d="M19 3H5c-1.414 0-2.121 0-2.56.412C2 3.824 2 4.488 2 5.815v.69c0 1.037 0 1.556.26 1.986c.26.43.733.698 1.682 1.232l2.913 1.64c.636.358.955.537 1.183.735c.474.411.766.895.898 1.49c.064.284.064.618.064 1.285v2.67c0 .909 0 1.364.252 1.718c.252.355.7.53 1.594.88c1.879.734 2.818 1.101 3.486.683c.668-.417.668-1.372.668-3.282v-2.67c0-.666 0-1 .064-1.285a2.68 2.68 0 0 1 .899-1.49c.227-.197.546-.376 1.182-.735l2.913-1.64c.948-.533 1.423-.8 1.682-1.23c.26-.43.26-.95.26-1.988v-.69c0-1.326 0-1.99-.44-2.402C21.122 3 20.415 3 19 3Z"></path>
+          </svg>
+          Фильтры
+        </button>
+      </div>
+      <div class="catalog__inner">
+        <div class="catalog__filters">
+          <button class="catalog__close" id="catalog-filters-close" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z"
+                    fill="black"/>
+            </svg>
+            Закрыть настройки
+          </button>
+          <div class="catalog__column short">
+            <label for="availability-select">Сортировать по наличию:</label>
+            <select class="select" id="availability-select" name="availability-select">
+              <option selected value="">По умолчанию</option>
+              <option selected value="is_availability">Есть в наличии</option>
+              <option selected value="is_not_availability">Нет в наличии</option>
+            </select>
+          </div>
+          <div class="catalog__column short">
+            <label for="price-select">Сортировать по цене:</label>
+            <select class="select" id="price-select" name="price-select">
+              <option selected value="">По умолчанию</option>
+              <option selected value="low_to_high">По возрастанию цены</option>
+              <option selected value="high_to_low">По убыванию цены</option>
+            </select>
+          </div>
+          <div class="catalog__column">
+            <label for="price-select">Сортировать по категориям:</label>
+            <ul class="catalog__checkboxes">
+              <li class="checkbox">
+                <input type="checkbox" id="archiving">
+                <label for="archiving">
+                  <div class="checkbox__check"></div>
+                  Папки и системы архивации</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="desk_accessories">
+                <label for="desk_accessories">
+                  <div class="checkbox__check"></div>
+                  Настольные аксессуары</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="paper_products">
+                <label for="paper_products">
+                  <div class="checkbox__check"></div>
+                  Бумага и бумажная продукция</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="office_equipment">
+                <label for="office_equipment">
+                  <div class="checkbox__check"></div>
+                  Офисная техника</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="stationery">
+                <label for="stationery">
+                  <div class="checkbox__check"></div>
+                  Канцелярские мелочи</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="demo_equipment">
+                <label for="demo_equipment">
+                  <div class="checkbox__check"></div>
+                  Демооборудование</label>
+              </li>
+              <li class="checkbox">
+                <input type="checkbox" id="office_furniture">
+                <label for="office_furniture">
+                  <div class="checkbox__check"></div>
+                  Конторское оборудование</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <ul class="catalog__items">
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+          <li class="catalog__item">
+            <div class="catalog__image">
+              <img src="images/pr-1.png" height="230" alt="имя товара">
+            </div>
+            <div class="catalog__content">
+              <span class="catalog__price">10 050₽</span>
+              <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+              <a class="catalog__more" href="">Узнать подробнее</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+@include('components/_footer.html')
+</body>
+<script src="js/catalog.js" defer></script>
+<script src="js/components/custom-select.js" defer></script>

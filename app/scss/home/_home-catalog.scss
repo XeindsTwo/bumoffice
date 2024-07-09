@@ -75,7 +75,7 @@
       min-width: 280px;
     }
     @include r($phone) {
-      min-width: 260px;
+      min-width: 255px;
     }
 
     img {
@@ -109,6 +109,9 @@
       }
       @include r($sm) {
         height: 230px;
+      }
+      @include r($phone) {
+        height: 200px;
       }
     }
   }

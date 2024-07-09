@@ -1,0 +1,57 @@
+.checkbox {
+  display: block;
+  max-width: max-content;
+  margin-bottom: 15px;
+  transition: color .4s;
+  &:hover {
+    color: $gold200;
+  }
+
+  input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+
+    &:checked + label .checkbox__check::after {
+      opacity: 1;
+    }
+  }
+
+  label {
+    @include flex-align-center(8);
+    position: relative;
+    cursor: pointer;
+    opacity: 1 !important;
+  }
+
+  &__check {
+    @include pseudo;
+    position: relative;
+    background-color: transparent;
+    border: 2px solid $gold200;
+    border-radius: 4px;
+    margin-top: -1px;
+    display: flex;
+    flex-shrink: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+
+    &::after {
+      @include pseudo;
+      display: block;
+      top: 2px;
+      left: 6px;
+      width: 5px;
+      height: 10px;
+      border: solid $gold200;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+      transition: opacity .4s;
+    }
+  }
+}

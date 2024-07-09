@@ -1,0 +1,353 @@
+.catalog {
+  margin-top: 70px;
+  margin-bottom: 120px;
+  @include r($lg) {
+    margin-bottom: 100px;
+  }
+  @include r($sm) {
+    margin-bottom: 80px;
+  }
+  @media (max-width: 400px) {
+    margin-bottom: 70px;
+  }
+
+  &__top {
+    @include flex-between-center-gap(30);
+    margin-bottom: 60px;
+    @include r($lg) {
+      margin-bottom: 50px;
+    }
+    @include r($phone) {
+      align-items: initial;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 400px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+    @include r($phone) {
+      font-size: 28px;
+    }
+    @media (max-width: 395px) {
+      font-size: 26px;
+    }
+  }
+
+  &__filters-btn {
+    @include flex-align-center(9);
+    background-color: $blocks;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: none;
+    font-size: 16px;
+    border: 1px solid transparent;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: rgba($gold200, .8);
+      color: $white;
+
+      svg path {
+        stroke: $white;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $gold200;
+      color: $black;
+
+      svg path {
+        stroke: $black;
+      }
+    }
+
+    svg {
+      pointer-events: none;
+    }
+
+    @media (max-width: 780px) {
+      display: flex;
+    }
+  }
+
+  &__inner {
+    @include flex-between(40);
+    @media (max-width: 780px) {
+      flex-direction: column;
+    }
+  }
+
+  &__filters {
+    @include flex-column(40);
+    margin-bottom: 30px;
+    max-width: 280px;
+    width: 100%;
+    @media (max-width: 1130px) {
+      max-width: 265px;
+    }
+    @media (max-width: 870px) {
+      max-width: 230px;
+    }
+    @include r($lg) {
+      font-size: 14px;
+    }
+    @media (max-width: 780px) {
+      position: fixed;
+      pointer-events: none;
+      user-select: none;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding: 30px 15px 15px;
+      background-color: $white;
+      max-width: 330px;
+      z-index: 500;
+      transform: translateX(-100%);
+      transition: transform .5s;
+    }
+    @media (max-width: 530px) {
+      max-width: 300px;
+    }
+    @media (max-width: 390px) {
+      max-width: 100%;
+    }
+
+    &.active {
+      transform: translateX(0%);
+      user-select: initial;
+      pointer-events: initial;
+    }
+  }
+
+  &__column {
+    @include flex-column(5);
+    max-width: 340px;
+    width: 100%;
+
+    &.short {
+      max-width: 250px;
+      @media (max-width: 780px) {
+        max-width: 270px;
+      }
+    }
+
+    label {
+      font-weight: 500;
+      opacity: .8;
+    }
+  }
+
+  &__checkboxes {
+    margin-top: 8px;
+    @include flex-column(6);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px 17px;
+    @media (max-width: 1380px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include r($desktop) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 25px 14px;
+    }
+    @media (max-width: 1045px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 25px 10px;
+    }
+    @media (max-width: 940px) {
+      grid-gap: 20px 8px;
+    }
+    @media (max-width: 810px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 560px) {
+      margin: 0 -12px;
+    }
+    @media (max-width: 495px) {
+      grid-gap: 22px 11px;
+    }
+    @media (max-width: 400px) {
+      grid-gap: 15px 6px;
+    }
+  }
+
+  &__item {
+    @include flex-column(0);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background-color: $blocks;
+    @media (max-width: 1130px) {
+      border-radius: 12px;
+    }
+    @include r($phone) {
+      border-radius: 10px;
+    }
+
+    img {
+      @include objectCoverBg;
+      width: 100%;
+      margin: 0 auto;
+      user-select: none;
+    }
+  }
+
+  &__image {
+    img {
+      @include objectCoverBg;
+      @include r($lg) {
+        height: 280px;
+      }
+      @media (max-width: 1040px) {
+        height: 270px;
+      }
+      @media (max-width: 940px) {
+        height: 240px;
+      }
+      @include r($tablet) {
+        height: 290px;
+      }
+      @media (max-width: 740px) {
+        height: 250px;
+      }
+      @media (max-width: 520px) {
+        height: 220px;
+      }
+      @media (max-width: 495px) {
+        height: 200px;
+      }
+      @media (max-width: 440px) {
+        height: 180px;
+      }
+      @media (max-width: 395px) {
+        height: 170px;
+      }
+    }
+  }
+
+  &__content {
+    padding: 20px 15px;
+    height: 100%;
+    @include flex-column(0);
+    @media (max-width: 495px) {
+      padding: 20px 11px;
+    }
+    @media (max-width: 380px) {
+      padding: 18px 10px;
+    }
+  }
+
+  &__price {
+    border-radius: 13px;
+    background-color: rgba($gold, .4);
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 500;
+    display: block;
+    max-width: max-content;
+    margin-bottom: 20px;
+    @include r($lg) {
+      font-size: 14px;
+      padding: 9px 13px;
+    }
+    @include r($phone) {
+      padding: 8px 11px;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 20px;
+    @media (max-width: 1280px) {
+      font-size: 16px;
+    }
+    @include r($phone) {
+      font-size: 14px;
+    }
+    @media (max-width: 395px) {
+      font-size: 13px;
+    }
+  }
+
+  &__more {
+    @include flex-center;
+    padding: 16px;
+    width: 100%;
+    margin-top: auto;
+    background-color: $black;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    color: $white;
+    transition: background-color .4s, border .4s, color .4s;
+    @include r($lg) {
+      font-size: 14px;
+    }
+    @include r($phone) {
+      padding: 14px;
+    }
+    @media (max-width: 395px) {
+      font-size: 13px;
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $black;
+      color: $black;
+    }
+
+    &:focus {
+      background-color: $gold;
+      color: $white;
+      border-color: transparent;
+    }
+  }
+
+  &__close {
+    @include flex-align-center(9);
+    display: none;
+    margin-bottom: -10px;
+    margin-right: auto;
+    font-size: 18px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 2px;
+    transition: color .4s, border .4s;
+    @media (max-width: 780px) {
+      display: flex;
+    }
+    @include r($sm) {
+      font-size: 16px;
+      svg {
+        width: 11px;
+        height: 11px;
+      }
+    }
+
+    &:hover {
+      color: $gold200;
+
+      svg path {
+        fill: $gold200;
+      }
+    }
+
+    &:focus {
+      border-color: $gold200;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.select {
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  z-index: -100;
+  user-select: none;
+  pointer-events: none;
+}
+
+.custom-select {
+  position: relative;
+  max-width: 338px;
+  font-size: 16px;
+  @include r($lg) {
+    font-size: 14px;
+  }
+
+  &.field {
+    padding: 0;
+  }
+
+  &--show {
+    .custom-select__current {
+      border-radius: 8px 8px 0 0;
+
+      &::after {
+        transform: rotate(-180deg) translateY(50%);
+      }
+    }
+
+    .custom-select__list {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      z-index: 100;
+      border-radius: 0 0 7px 7px;
+    }
+  }
+
+  &__current {
+    padding: 18px 40px 18px 16px;
+    line-height: 1;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid $gold200;
+    transition: border-radius .4s, border .4s;
+
+    &::after {
+      @include pseudo;
+      @include top50;
+      right: 15px;
+      width: 11px;
+      height: 6px;
+      background-image: url("../images/icons/select-arrow.svg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: transform .4s;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 54px;
+    z-index: 20;
+    overflow: hidden;
+    border-radius: 7px;
+    border: 1px solid $gold200;
+    border-top: none;
+    max-height: 230px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+    @include r($lg) {
+      top: 52px;
+    }
+  }
+
+  &__item {
+    padding: 15px 16px;
+    cursor: pointer;
+    background-color: $white;
+    transition: color .4s, background-color .4s, border .4s;
+
+    &:hover {
+      background-color: $gold200;
+      color: $white;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $gold200;
+    }
+  }
+}

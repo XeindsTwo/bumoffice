@@ -33,4 +33,14 @@
   @include r($sm) {
     font-size: 32px;
   }
+
+  &--bottom {
+    margin-bottom: 60px;
+    @include r($lg) {
+      margin-bottom: 50px;
+    }
+    @include r($phone) {
+      margin-bottom: 40px;
+    }
+  }
 }
