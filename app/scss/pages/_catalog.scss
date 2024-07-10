@@ -42,7 +42,7 @@
   &__filters-btn {
     @include flex-align-center(9);
     background-color: $blocks;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border-radius: 8px;
     display: none;
     font-size: 16px;
@@ -349,5 +349,72 @@
     &:focus {
       border-color: $gold200;
     }
+  }
+
+  .choices {
+    grid-column: span 2;
+
+    &[data-type*=select-one]::after {
+      transition: all .2s;
+      right: 20px;
+    }
+
+    &__inner {
+      padding: 17px 14px !important;
+      background-color: $blocks;
+      letter-spacing: -0.14px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      border-radius: 10px;
+      font-weight: 400;
+      transition: all .4s;
+
+      &:hover {
+        background-color: $white;
+        border-color: $gold200;
+      }
+    }
+
+    &__list--single {
+      padding: 0;
+      display: flex;
+    }
+  }
+
+  .is-open .choices__inner {
+    border-radius: 10px;
+    background-color: $white;
+    border-color: $gold200;
+  }
+
+  .is-flipped.is-open .choices__inner {
+    border-radius: 10px;
+  }
+
+  .choices__list--dropdown, .choices__list[aria-expanded] {
+    top: 120%;
+    border-radius: 8px;
+    transition: all .4s;
+  }
+
+  .is-flipped .choices__list--dropdown, .is-flipped .choices__list[aria-expanded] {
+    bottom: 120%;
+    border-radius: 8px;
+    transition: all .4s;
+  }
+
+  .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0;
+    &::after {
+      display: none;
+    }
+  }
+
+  .choices__item {
+    transition: background-color .25s;
+  }
+
+  .choices__list--dropdown .choices__item, .choices__list[aria-expanded] .choices__item {
+    padding: 12px 14px;
   }
 }

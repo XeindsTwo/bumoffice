@@ -22,7 +22,14 @@ document.addEventListener('click', (event) => {
   }
 });
 
-const regionElement = document.getElementById('availability-select');
-const regionElement2 = document.getElementById('price-select');
-const regionSelect = new Choices(regionElement, {allowHTML: true, searchEnabled: false});
-const regionSelect2 = new Choices(regionElement2, {allowHTML: true, searchEnabled: false});
+function initializeChoices(elementId) {
+  const element = document.getElementById(elementId);
+  return new Choices(element, {
+    allowHTML: true,
+    searchEnabled: false,
+    shouldSort: false
+  });
+}
+
+initializeChoices('availability-select');
+initializeChoices('price-select');
