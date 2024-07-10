@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="html" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание сайта">
+  <meta http-equiv="content-type" content="public, max-age=3600">
+  <meta name="theme-color" content="#fff">
+  <title>Поиск товаров</title>
+  <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="body">
+<header>
+  <div class="container">
+    <div class="header__inner">
+      <a href="/">
+        <img src="/images/logo.svg" alt="logo">
+      </a>
+      <form class="header__form" action="" method="GET">
+        <label for="search">
+          <input class="header__input" id="search" name="search" required="" type="text" placeholder="Поиск товаров по названию...">
+        </label>
+        <button class="header__form-btn" type="submit">Поиск</button>
+      </form>
+      <div class="header__right">
+        <a class="header__btn" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21" viewBox="0 0 19 21" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.40203 2.57613C4.66413 2.12105 5.24506 1.96489 5.69958 2.22731L14.2496 7.16389C14.7041 7.42632 14.8601 8.00797 14.598 8.463C14.3359 8.91813 13.755 9.07431 13.3004 8.81189L4.75042 3.87528C4.29591 3.61285 4.13993 3.0312 4.40203 2.57613Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.077 0.381125C8.50982 0.131442 9.00049 0 9.5 0C9.99951 0 10.4903 0.131452 10.923 0.381153L10.925 0.382304L17.575 4.18698C18.0078 4.43718 18.3673 4.79695 18.6174 5.23018C18.8676 5.6634 18.9995 6.15488 19 6.65528V14.2666C18.9995 14.767 18.8676 15.2584 18.6174 15.6917C18.3673 16.125 18.0078 16.4847 17.575 16.7349L17.5713 16.7369L10.925 20.5395L10.9233 20.5406C10.4905 20.7904 9.99961 20.9219 9.5 20.9219C9.0004 20.9219 8.50963 20.7904 8.07681 20.5406L8.075 20.5395L1.425 16.7349C0.992171 16.4847 0.632671 16.125 0.382555 15.6917C0.132439 15.2584 0.000513 14.767 0 14.2666V6.65528C0.000513 6.15488 0.132439 5.6634 0.382555 5.23018C0.632671 4.79695 0.992171 4.43718 1.425 4.18699L1.42867 4.18487L8.077 0.381125ZM9.5 1.90234C9.33328 1.90234 9.1694 1.9463 9.025 2.02978L9.0213 2.03189L2.375 5.83446L2.3735 5.83533C2.2299 5.91869 2.11061 6.03828 2.02752 6.18219C1.94421 6.32648 1.90024 6.49015 1.9 6.65682V14.265C1.90024 14.4317 1.94421 14.5954 2.02752 14.7397C2.11061 14.8836 2.2299 15.0032 2.3735 15.0866L2.375 15.0874L9.025 18.8921C9.1694 18.9755 9.33328 19.0196 9.5 19.0196C9.66673 19.0196 9.8306 18.9755 9.975 18.8921L9.97871 18.89L16.625 15.0874L16.6265 15.0866C16.7701 15.0032 16.8894 14.8836 16.9725 14.7397C17.0558 14.5953 17.0998 14.4314 17.1 14.2647V6.65723C17.0998 6.49042 17.0558 6.3266 16.9725 6.18219C16.8894 6.03828 16.7701 5.9187 16.6265 5.83534L16.625 5.83446L9.975 2.02979C9.8306 1.94631 9.66673 1.90234 9.5 1.90234Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.384171 5.19074C0.646884 4.73602 1.22803 4.58063 1.68218 4.84368L9.5 9.37155L17.3178 4.84368C17.7719 4.58063 18.3531 4.73602 18.6158 5.19074C18.8785 5.64546 18.7234 6.22732 18.2692 6.49035L9.97567 11.2938C9.68145 11.4642 9.31855 11.4642 9.02434 11.2938L0.730816 6.49035C0.27665 6.22732 0.121458 5.64546 0.384171 5.19074Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 9.50986C10.0247 9.50986 10.45 9.93569 10.45 10.461V20.0488C10.45 20.5742 10.0247 21 9.5 21C8.97532 21 8.55 20.5742 8.55 20.0488V10.461C8.55 9.93569 8.97532 9.50986 9.5 9.50986Z" fill="white"/>
+          </svg>
+          Корзина
+        </a>
+        <a class="header__btn" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" viewBox="0 0 16 21" fill="none">
+            <path d="M8.00002 11.5833C9.07134 11.5833 10.1186 11.2657 11.0094 10.6705C11.9001 10.0753 12.5944 9.2293 13.0044 8.23954C13.4143 7.24977 13.5216 6.16066 13.3126 5.10993C13.1036 4.0592 12.5877 3.09404 11.8302 2.33651C11.0726 1.57897 10.1075 1.06309 9.05676 0.854082C8.00603 0.645079 6.91692 0.752347 5.92715 1.16232C4.93739 1.5723 4.09142 2.26656 3.49623 3.15733C2.90104 4.0481 2.58335 5.09535 2.58335 6.16667C2.58335 7.60326 3.15404 8.98101 4.16986 9.99683C5.18568 11.0127 6.56343 11.5833 8.00002 11.5833V11.5833ZM8.00002 2.91667C8.64281 2.91667 9.27116 3.10728 9.80562 3.46439C10.3401 3.82151 10.7566 4.32909 11.0026 4.92295C11.2486 5.51681 11.313 6.17027 11.1876 6.80071C11.0622 7.43115 10.7526 8.01025 10.2981 8.46477C9.8436 8.91929 9.2645 9.22882 8.63406 9.35422C8.00362 9.47962 7.35016 9.41526 6.7563 9.16928C6.16244 8.92329 5.65486 8.50673 5.29774 7.97227C4.94063 7.43781 4.75002 6.80946 4.75002 6.16667C4.75002 5.30472 5.09243 4.47807 5.70192 3.86857C6.31142 3.25908 7.13807 2.91667 8.00002 2.91667V2.91667ZM15.5834 17V19.1667C15.5834 19.454 15.4692 19.7295 15.2661 19.9327C15.0629 20.1359 14.7873 20.25 14.5 20.25C14.2127 20.25 13.9372 20.1359 13.734 19.9327C13.5308 19.7295 13.4167 19.454 13.4167 19.1667V17C13.4167 16.7127 13.3026 16.4371 13.0994 16.234C12.8962 16.0308 12.6207 15.9167 12.3334 15.9167H3.66669C3.37937 15.9167 3.10382 16.0308 2.90065 16.234C2.69749 16.4371 2.58335 16.7127 2.58335 17V19.1667C2.58335 19.454 2.46922 19.7295 2.26605 19.9327C2.06289 20.1359 1.78734 20.25 1.50002 20.25C1.2127 20.25 0.937153 20.1359 0.733988 19.9327C0.530824 19.7295 0.416687 19.454 0.416687 19.1667V17C0.416687 16.138 0.759097 15.3114 1.36859 14.7019C1.97808 14.0924 2.80473 13.75 3.66669 13.75H12.3334C13.1953 13.75 14.022 14.0924 14.6315 14.7019C15.2409 15.3114 15.5834 16.138 15.5834 17Z" fill="white"/>
+          </svg>
+          Профиль
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav class="header__navigation">
+    <div class="container">
+      <ul class="header__list">
+        <li>
+          <a class="header__link" href="">Новинки</a>
+        </li>
+        <li>
+          <a class="header__link" href="catalog.html">Каталог</a>
+        </li>
+        <li>
+          <a class="header__link" href="about.html">О компании</a>
+        </li>
+        <li>
+          <a class="header__link" href="delivery.html">Доставка и оплата</a>
+        </li>
+        <li>
+          <a class="header__link" href="">Информация</a>
+        </li>
+        <li>
+          <a class="header__link" href="">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<body>
+<main>
+  <section class="catalog">
+    <div class="container">
+      <div class="catalog__top">
+        <h1 class="catalog__title title title--bottom">Поиск товаров</h1>
+        <button class="catalog__filters-btn" id="catalog-filters-open" type="button">
+          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false" tabindex="-1" width="16" height="16" viewBox="0 0 24 24">
+            <path fill="none" stroke="#101010" stroke-width="2" d="M19 3H5c-1.414 0-2.121 0-2.56.412C2 3.824 2 4.488 2 5.815v.69c0 1.037 0 1.556.26 1.986c.26.43.733.698 1.682 1.232l2.913 1.64c.636.358.955.537 1.183.735c.474.411.766.895.898 1.49c.064.284.064.618.064 1.285v2.67c0 .909 0 1.364.252 1.718c.252.355.7.53 1.594.88c1.879.734 2.818 1.101 3.486.683c.668-.417.668-1.372.668-3.282v-2.67c0-.666 0-1 .064-1.285a2.68 2.68 0 0 1 .899-1.49c.227-.197.546-.376 1.182-.735l2.913-1.64c.948-.533 1.423-.8 1.682-1.23c.26-.43.26-.95.26-1.988v-.69c0-1.326 0-1.99-.44-2.402C21.122 3 20.415 3 19 3Z"></path>
+          </svg>
+          Фильтры
+        </button>
+      </div>
+      <p class="catalog__search">
+        По вашему запросу <span>«value»</span> мы нашли товары:
+      </p>
+      <div class="catalog__inner">
+        <div class="catalog__filters">
+          <button class="catalog__close" id="catalog-filters-close" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z"
+                    fill="black"/>
+            </svg>
+            Закрыть настройки
+          </button>
+          <div class="catalog__column short">
+            <label for="availability-select">Сортировать по наличию:</label>
+            <select id="availability-select" name="availability-select">
+              <option selected value="default">По умолчанию</option>
+              <option value="is_availability">Есть в наличии</option>
+              <option value="is_not_availability">Нет в наличии</option>
+            </select>
+          </div>
+          <div class="catalog__column short">
+            <label for="price-select">Сортировать по цене:</label>
+            <select id="price-select" name="price-select">
+              <option selected value="default">По умолчанию</option>
+              <option value="low_to_high">По возрастанию цены</option>
+              <option value="high_to_low">По убыванию цены</option>
+            </select>
+          </div>
+        </div>
+        <ul class="catalog__rows">
+          <li class="catalog__row">
+            <span class="catalog__subtitle">Папки и системы архивации</span>
+            <ul class="catalog__items">
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="catalog__row">
+            <span class="catalog__subtitle">Офисная техника</span>
+            <ul class="catalog__items">
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li class="catalog__row">
+            <span class="catalog__subtitle">Канцелярские мелочи</span>
+            <ul class="catalog__items">
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+              <li class="catalog__item">
+                <div class="catalog__image">
+                  <img src="images/pr-1.png" height="230" alt="имя товара">
+                </div>
+                <div class="catalog__content">
+                  <span class="catalog__price">10 050₽</span>
+                  <span class="catalog__name">
+                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
+              </span>
+                  <a class="catalog__more" href="">Узнать подробнее</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="footer" id="community">
+  <div class="container">
+    <nav class="footer__nav">
+      <ul class="footer__list">
+        <li>
+          <a class="footer__link" href="">Новинки</a>
+        </li>
+        <li>
+          <a class="footer__link" href="">Каталог</a>
+        </li>
+        <li>
+          <a class="footer__link" href="about.html">О компании</a>
+        </li>
+        <li>
+          <a class="footer__link" href="delivery.html">Доставка и оплата</a>
+        </li>
+        <li>
+          <a class="footer__link" href="">Информация</a>
+        </li>
+        <li>
+          <a class="footer__link" href="">Контакты</a>
+        </li>
+      </ul>
+    </nav>
+    <h3 class="footer__subtitle">Контакты</h3>
+    <div class="footer__bottom">
+      <a class="footer__item footer__item-link" href="https://maps.app.goo.gl/x9QYds4raJqfhsc68" target="_blank">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="path" fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 2.5C9.87827 2.5 7.84344 3.34285 6.34315 4.84315C4.84285 6.34344 4 8.37827 4 10.5C4 13.5981 6.01574 16.6042 8.22595 18.9373C9.31061 20.0822 10.3987 21.0195 11.2167 21.6708C11.5211 21.9133 11.787 22.1152 12 22.2726C12.213 22.1152 12.4789 21.9133 12.7833 21.6708C13.6013 21.0195 14.6894 20.0822 15.774 18.9373C17.9843 16.6042 20 13.5981 20 10.5C20 8.37827 19.1571 6.34344 17.6569 4.84315C16.1566 3.34285 14.1217 2.5 12 2.5ZM12 23.5C11.4453 24.3321 11.445 24.3319 11.4448 24.3317L11.4419 24.3298L11.4352 24.3253L11.4123 24.3098C11.3928 24.2966 11.3651 24.2776 11.3296 24.253C11.2585 24.2038 11.1565 24.1321 11.0278 24.0392C10.7705 23.8534 10.4064 23.5822 9.97082 23.2354C9.10133 22.543 7.93939 21.5428 6.77405 20.3127C4.48426 17.8958 2 14.4019 2 10.5C2 7.84784 3.05357 5.3043 4.92893 3.42893C6.8043 1.55357 9.34784 0.5 12 0.5C14.6522 0.5 17.1957 1.55357 19.0711 3.42893C20.9464 5.3043 22 7.84784 22 10.5C22 14.4019 19.5157 17.8958 17.226 20.3127C16.0606 21.5428 14.8987 22.543 14.0292 23.2354C13.5936 23.5822 13.2295 23.8534 12.9722 24.0392C12.8435 24.1321 12.7415 24.2038 12.6704 24.253C12.6349 24.2776 12.6072 24.2966 12.5877 24.3098L12.5648 24.3253L12.5581 24.3298L12.556 24.3312C12.5557 24.3314 12.5547 24.3321 12 23.5ZM12 23.5L12.5547 24.3321C12.2188 24.556 11.7807 24.5556 11.4448 24.3317L12 23.5Z"
+                fill="white"/>
+          <path class="path" fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 8.5C10.8954 8.5 10 9.39543 10 10.5C10 11.6046 10.8954 12.5 12 12.5C13.1046 12.5 14 11.6046 14 10.5C14 9.39543 13.1046 8.5 12 8.5ZM8 10.5C8 8.29086 9.79086 6.5 12 6.5C14.2091 6.5 16 8.29086 16 10.5C16 12.7091 14.2091 14.5 12 14.5C9.79086 14.5 8 12.7091 8 10.5Z"
+                fill="white"/>
+        </svg>
+        Россия, г Белореченск
+      </a>
+      <p class="footer__item">
+        <img src="images/icons/package.svg" width="24" height="24" alt="название магазина">
+        Компания “БумОфис”
+      </p>
+      <a class="footer__item footer__item-link phone" href="tel:+79951288544">
+        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="path"
+                d="M19.89 23.43C19.8 23.43 19.71 23.43 19.61 23.42C16.38 23.07 13.24 21.95 10.53 20.19C8.01 18.59 5.83 16.41 4.23 13.89C2.47 11.17 1.35 8.02 1.01 4.79C0.969997 4.36 1.02 3.95 1.15 3.55C1.28 3.15 1.5 2.79 1.78 2.48C2.06 2.17 2.4 1.93 2.78 1.76C3.17 1.59 3.58 1.5 4 1.5H7C7.7 1.5 8.42 1.75 8.98 2.23C9.53 2.7 9.89 3.36 9.99 4.08C10.11 4.97 10.33 5.85 10.64 6.68C10.84 7.22 10.89 7.8 10.76 8.36C10.64 8.92 10.36 9.44 9.96 9.84L9.24 10.56C10.42 12.4 11.98 13.97 13.83 15.15L14.55 14.43C14.96 14.02 15.48 13.74 16.04 13.63C16.6 13.51 17.18 13.55 17.72 13.75C18.55 14.06 19.43 14.28 20.31 14.4C21.05 14.5 21.71 14.87 22.19 15.43C22.66 15.99 22.92 16.7 22.9 17.43V20.42C22.9 20.84 22.82 21.24 22.65 21.63C22.48 22.01 22.23 22.36 21.93 22.64C21.62 22.92 21.26 23.14 20.86 23.27C20.54 23.38 20.22 23.43 19.89 23.43ZM7.02 3.5H7.01H4C3.86 3.5 3.73 3.53 3.6 3.59C3.47 3.64 3.35 3.72 3.26 3.82C3.16 3.92 3.09 4.04 3.05 4.18C3.01 4.31 2.99 4.45 3 4.59C3.31 7.5 4.32 10.34 5.91 12.81C7.36 15.09 9.33 17.06 11.61 18.51C14.07 20.11 16.91 21.11 19.81 21.43C19.93 21.44 20.07 21.42 20.2 21.38C20.33 21.34 20.45 21.26 20.56 21.17C20.67 21.08 20.75 20.96 20.8 20.83C20.86 20.7 20.88 20.56 20.88 20.42V17.42C20.88 17.41 20.88 17.4 20.88 17.4C20.89 17.15 20.8 16.92 20.64 16.73C20.48 16.54 20.26 16.42 20.02 16.39C19 16.26 17.98 16 17 15.64C16.82 15.57 16.62 15.56 16.44 15.6C16.25 15.64 16.08 15.73 15.94 15.87L14.68 17.14C14.36 17.46 13.87 17.52 13.48 17.3C10.82 15.79 8.62 13.58 7.1 10.93C6.89 10.51 6.95 10.02 7.27 9.7L8.54 8.43C8.67 8.3 8.76 8.13 8.8 7.94C8.84 7.75 8.83 7.56 8.76 7.38C8.39 6.4 8.14 5.38 8 4.35C7.97 4.12 7.85 3.9 7.67 3.74C7.49 3.59 7.26 3.5 7.02 3.5Z"
+                fill="white"/>
+        </svg>
+        +7 (995) 128-85-44
+      </a>
+      <p class="footer__item">
+        <img src="images/icons/time.svg" width="24" height="24" alt="график работы">
+        08:00 - 17:00 (пн-сб)
+      </p>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="js/main.min.js" defer></script>
+<script src="js/catalog.js" defer></script>
+<script src="js/components/custom-select.js" defer></script>
