@@ -21,3 +21,8 @@ document.addEventListener('click', (event) => {
     filtersMenu.classList.remove('active');
   }
 });
+
+const regionElement = document.getElementById('availability-select');
+const regionElement2 = document.getElementById('price-select');
+const regionSelect = new Choices(regionElement, {allowHTML: true, searchEnabled: false});
+const regionSelect2 = new Choices(regionElement2, {allowHTML: true, searchEnabled: false});

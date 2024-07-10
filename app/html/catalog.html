@@ -26,7 +26,7 @@ title: 'Каталог товаров'
           </button>
           <div class="catalog__column short">
             <label for="availability-select">Сортировать по наличию:</label>
-            <select class="select" id="availability-select" name="availability-select">
+            <select id="availability-select" name="availability-select">
               <option selected value="">По умолчанию</option>
               <option selected value="is_availability">Есть в наличии</option>
               <option selected value="is_not_availability">Нет в наличии</option>
@@ -34,7 +34,7 @@ title: 'Каталог товаров'
           </div>
           <div class="catalog__column short">
             <label for="price-select">Сортировать по цене:</label>
-            <select class="select" id="price-select" name="price-select">
+            <select id="price-select" name="price-select">
               <option selected value="">По умолчанию</option>
               <option selected value="low_to_high">По возрастанию цены</option>
               <option selected value="high_to_low">По убыванию цены</option>
@@ -192,5 +192,6 @@ title: 'Каталог товаров'
 </main>
 @include('components/_footer.html')
 </body>
+<script src="js/main.min.js" defer></script>
 <script src="js/catalog.js" defer></script>
 <script src="js/components/custom-select.js" defer></script>
