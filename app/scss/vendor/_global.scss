@@ -15,6 +15,10 @@
     transition: opacity .4s, visibility .4s;
   }
 
+  &.menu {
+    overflow: hidden;
+  }
+
   &.active {
     overflow: hidden;
 

@@ -1,6 +1,6 @@
-/*import {setupMobileMenu} from "./mobileMenu.js";
+import {setupMobileMenu} from "./mobileMenu.js";
 
-setupMobileMenu();*/
+setupMobileMenu();
 
 new Swiper('.start__swiper', {
   speed: 700,
