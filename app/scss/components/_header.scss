@@ -99,7 +99,6 @@
         display: flex;
         margin-left: 0;
         font-size: 16px;
-        padding: 9px 7px;
         max-width: 100%;
       }
       @include r($phone) {
@@ -128,6 +127,9 @@
       @media (max-width: 820px) {
         padding: 12px 23px;
       }
+      @media (max-width: 680px) {
+        padding: 14px 22px;
+      }
       @media (max-width: 410px) {
         padding: 11px 21px;
       }
@@ -147,9 +149,6 @@
   &__input {
     width: 100%;
     padding: 9px 0 9px 10px;
-    @include r($sm) {
-      padding-left: 6px;
-    }
 
     &:-webkit-autofill,
     &:-webkit-autofill:focus,
@@ -187,7 +186,7 @@
     font-size: 18px;
     font-weight: 500;
     position: relative;
-    transition: color .4s, background-color .4s;
+    transition: color .4s, background-color .4s, border .4s;
     @media (max-width: 1180px) {
       font-size: 16px;
     }
@@ -195,6 +194,7 @@
       display: flex;
       font-size: 18px;
       background-color: $blocks;
+      border: 1px solid transparent;
       padding: 30px 22px;
       border-radius: 8px;
     }
@@ -236,11 +236,26 @@
     }
 
     &:focus {
-      color: #FA7800;
+      color: $gold200;
+      @media (max-width: 1140px) {
+        color: $black;
+        background-color: transparent;
+        border-color: $gold200;
+      }
+      @media (max-width: 490px) {
+        color: $gold200;
+        border-color: transparent;
+      }
 
       &::before {
         width: 100%;
-        background-color: #FA7800;
+        background-color: $gold200;
+        @media (max-width: 1140px) {
+          width: 0;
+        }
+        @media (max-width: 490px) {
+          width: 100%;
+        }
       }
     }
 

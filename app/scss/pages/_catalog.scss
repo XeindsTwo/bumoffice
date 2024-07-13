@@ -1,6 +1,9 @@
 .catalog {
   margin-top: 70px;
   margin-bottom: 120px;
+  @media (max-width: 1140px) {
+    margin-top: 40px;
+  }
   @include r($lg) {
     margin-bottom: 100px;
   }
@@ -9,6 +12,9 @@
   }
   @media (max-width: 400px) {
     margin-bottom: 70px;
+  }
+  @media (max-width: 390px) {
+    margin-top: 30px;
   }
 
   &__top {

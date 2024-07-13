@@ -1,6 +1,12 @@
 .delivery {
   margin-top: 70px;
   margin-bottom: 80px;
+  @media (max-width: 1140px) {
+    margin-top: 40px;
+  }
+  @media (max-width: 430px) {
+    margin-top: 30px;
+  }
 
   &__blocks {
     @include flex-column(70);

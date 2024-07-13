@@ -1,10 +1,14 @@
 .about {
   margin-top: 70px;
   margin-bottom: 120px;
+  @media (max-width: 1140px) {
+    margin-top: 40px;
+  }
   @include r($lg) {
     margin-bottom: 100px;
   }
   @include r($sm) {
+    margin-top: 30px;
     margin-bottom: 80px;
   }
 
