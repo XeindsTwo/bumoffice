@@ -1,9 +1,10 @@
 .auth {
   &__top {
+    @include flex-center;
     border-bottom: 1px solid $gray-two;
     font-size: 48px;
     text-align: center;
-    padding: 19px 0;
+    padding: 23px 0;
     font-weight: 700;
     margin-bottom: 100px;
     @media (max-width: 1300px) {
@@ -14,6 +15,31 @@
     }
     @media (max-width: 700px) {
       margin-bottom: 50px;
+    }
+
+    a {
+      display: flex;
+      border-radius: 7px;
+      max-width: max-content;
+      outline: 2px solid transparent;
+      transition: opacity .4s, outline-color .4s;
+
+      &:hover {
+        opacity: .6;
+      }
+
+      &:focus {
+        opacity: 1;
+        outline-color: $gold200;
+      }
+    }
+
+    img {
+      @include objectCoverBg;
+      @include r($phone) {
+        width: auto;
+        height: 37px;
+      }
     }
   }
 
