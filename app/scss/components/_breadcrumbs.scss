@@ -1,0 +1,55 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: normal;
+    margin-bottom: 48px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        @include pseudo;
+        position: static;
+        width: 8px;
+        height: 1px;
+        margin-right: 8px;
+        margin-left: 8px;
+        background: $gold200;
+        right: 0;
+      }
+    }
+  }
+
+  &__link {
+    line-height: 1.2;
+    font-weight: 500;
+    display: block;
+
+    &--nav {
+      position: relative;
+      padding-bottom: 1px;
+      border-bottom: 1px solid transparent;
+      transition: color .3s, border .3s;
+
+      &:hover {
+        color: $black;
+        border-bottom-color: $black;
+      }
+
+      &:focus {
+        color: $gold200;
+        border-bottom-color: $gold200;
+      }
+    }
+
+    &.active {
+      opacity: .75;
+      pointer-events: none;
+    }
+  }
+}

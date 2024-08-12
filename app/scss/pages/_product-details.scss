@@ -1,0 +1,139 @@
+.product-details {
+  margin-top: 40px;
+  margin-bottom: 90px;
+
+  &__content {
+    @include flex-align-center(60);
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 15px;
+  }
+
+  &__info {
+    max-width: 600px;
+    padding-top: 30px;
+  }
+
+  &__availability {
+    @include flex-align-center(8);
+    font-size: 15px;
+    line-height: 1;
+    margin-bottom: 25px;
+
+    img {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  &__cart {
+    @include flex-align-center(8);
+    max-width: max-content;
+    border-radius: 6px;
+    border: 1px solid $black;
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    @include flex-center;
+    min-height: 45px;
+    width: 45px;
+    outline: 1px solid transparent;
+    transition: background-color .4s;
+
+    &:hover {
+      background-color: $black;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      outline-color: $black;
+    }
+
+    svg {
+      width: 0.9rem;
+    }
+  }
+
+  &__input {
+    text-align: center;
+    min-height: 45px;
+    max-width: 50px;
+    padding: 0 10px;
+  }
+
+  &__add {
+    font-weight: 500;
+    padding: 15px 60px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: $gold;
+    color: $white;
+    transition: background-color .4s, border .4s, color .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $gold;
+      color: $black;
+    }
+
+    &:focus {
+      background-color: $gold200;
+      border-color: transparent;
+      color: $white;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    color: $gold200;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    max-width: 1000px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+
+  &__characteristics {
+    @include flex-column(8);
+
+    li {
+      position: relative;
+      padding-left: 17px;
+
+      &::before {
+        @include pseudo;
+        @include top50;
+        left: 0;
+        width: 5px;
+        height: 5px;
+        background-color: rgba($black, .7);
+        border-radius: 50%;
+      }
+    }
+  }
+}

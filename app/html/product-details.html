@@ -1,0 +1,104 @@
+@include('components/_head.html', {
+title: 'БумОфис | Детали товара'
+})
+<body class="body body--grid">
+@include('components/_header.html')
+<main>
+  <section class="product-details">
+    <div class="container">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link breadcrumbs__link--nav" href="/">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a class="breadcrumbs__link breadcrumbs__link--nav" href="catalog.html">Каталог товаров</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span class="breadcrumbs__link">
+            Планировщик задач на 2024-2025 учебный год
+          </span>
+        </li>
+      </ul>
+      <div class="product-details__content">
+        <img class="product-details__img" width="550" height="550" src="images/product.webp" alt="Название товара">
+        <div class="product-details__info">
+          <div class="product-details__availability">
+            <img src="images/icons/is_availability.svg" width="22" height="22" alt="иконка наличие товара">
+            Есть в наличии
+          </div>
+          <h1 class="product-details__title">
+            Книга планировщик задач на 2024-2025 учебный год
+          </h1>
+          <span class="product-details__price">
+           3 400 ₽
+          </span>
+          <form action="">
+            <div class="product-details__cart">
+              <button class="product-details__btn" type="button" id="decrement">
+                <span class="sr-only">Убавить количество товара на 1</span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                     class="icon icon-minus" fill="none" viewBox="0 0 10 2">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
+                        fill="currentColor">
+                  </path>
+                </svg>
+              </button>
+              <input class="product-details__input" value="1" type="number" id="quantity" name="quantity"
+                     placeholder="">
+              <button class="product-details__btn" type="button" id="increment">
+                <span class="sr-only">Прибавить количество товара на 1</span>
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                     class="icon icon-plus" fill="none" viewBox="0 0 10 10">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
+                        fill="currentColor"></path>
+                </svg>
+              </button>
+            </div>
+            <button class="product-details__add" type="submit">Добавить в корзину</button>
+          </form>
+        </div>
+      </div>
+      <span class="product-details__subtitle">Описание товара</span>
+      <div class="product-details__description">
+        Поднимите свое академическое планирование на новый уровень с помощью Планировщика задач на 2024-2025 учебный год
+        от Appointed в цвете Sky Blue. Всегда популярен среди студентов, профессионалов и дизайнеров благодаря простоте
+        использования и стильному минималистичному дизайну. Идеальный размер для того, чтобы положить его в сумку для
+        книг, когда вы переключаетесь между повседневными делами.
+        <br>
+        <br>
+        Каждый двухстраничный разворот включает недельный обзор слева и полную страницу справа для выделения
+        приоритетов, создания заметок и составления списка задач. Он даже имеет отмечаемые флажками поля для
+        удовлетворительного завершения. Ламинированные ежемесячные вкладки позволяют легко перемещаться в течение года.
+        <br>
+        <br>
+        Этот роскошный ежедневник имеет водонепроницаемую обложку из ткани, переплет из латунной проволоки и обложку с
+        тонким тиснением фольгой.
+        <br>
+        <br>
+        Планировщик задач на учебный год датирован и действует с августа 2024 года по июль 2025 года.
+      </div>
+      <span class="product-details__subtitle">Основные характеристики</span>
+      <ul class="product-details__characteristics">
+        <li>Водонепроницаемая обложка для книги</li>
+        <li>Гладкая, высококачественная 70-фунтовая текстовая ложа</li>
+        <li>Ламинированные вкладки с месяцами</li>
+        <li>Тисненые фольгой обложки</li>
+        <li>Переплет из латунной проволоки</li>
+        <li>Одна разлинованная страница для заметок в конце каждого месяца.</li>
+        <li>Обзор года</li>
+        <li>Таблица преобразования</li>
+        <li>Ежемесячные цели</li>
+        <li>Ежемесячный спред, включая основные праздники</li>
+        <li>Распределение недель и задач</li>
+        <li>авг. 2023 г. - июль 2024 г.</li>
+        <li>12-месячный</li>
+        <li>158 страниц</li>
+      </ul>
+    </div>
+  </section>
+</main>
+@include('components/_footer.html')
+</body>
+<script src="js/components/mobile-menu.js" defer></script>
+<script src="js/components/add-to-cart.js" defer></script>
