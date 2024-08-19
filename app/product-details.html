@@ -147,12 +147,12 @@
           <h1 class="product-details__title">
             Книга планировщик задач на 2024-2025 учебный год
           </h1>
-          <span class="product-details__price">
-           3 400 ₽
-          </span>
-          <form action="">
+          <form class="product-details__form" action="">
+            <span class="product-details__price">
+              3 400 ₽
+            </span>
             <div class="product-details__cart">
-              <button class="product-details__btn" type="button" id="decrement">
+              <button class="product-details__btn decrement" type="button">
                 <span class="sr-only">Убавить количество товара на 1</span>
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
                      class="icon icon-minus" fill="none" viewBox="0 0 10 2">
@@ -161,9 +161,9 @@
                   </path>
                 </svg>
               </button>
-              <input class="product-details__input" value="1" type="number" id="quantity" name="quantity"
+              <input class="product-details__input quantity" value="1" type="number" name="quantity"
                      placeholder="">
-              <button class="product-details__btn" type="button" id="increment">
+              <button class="product-details__btn increment" type="button">
                 <span class="sr-only">Прибавить количество товара на 1</span>
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
                      class="icon icon-plus" fill="none" viewBox="0 0 10 10">
@@ -176,6 +176,34 @@
             <button class="product-details__add" type="submit">Добавить в корзину</button>
           </form>
         </div>
+        <form class="product-details__form mobile" action="">
+            <span class="product-details__price">
+              Цена - 3 400 ₽
+            </span>
+          <div class="product-details__cart">
+            <button class="product-details__btn decrement" type="button">
+              <span class="sr-only">Убавить количество товара на 1</span>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                   class="icon icon-minus" fill="none" viewBox="0 0 10 2">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
+                      fill="currentColor">
+                </path>
+              </svg>
+            </button>
+            <input class="product-details__input quantity" value="1" type="number" name="quantity"
+                   placeholder="">
+            <button class="product-details__btn increment" type="button">
+              <span class="sr-only">Прибавить количество товара на 1</span>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
+                   class="icon icon-plus" fill="none" viewBox="0 0 10 10">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
+                      fill="currentColor"></path>
+              </svg>
+            </button>
+          </div>
+          <button class="product-details__add" type="submit">Добавить в корзину</button>
+        </form>
       </div>
       <span class="product-details__subtitle">Описание товара</span>
       <div class="product-details__description">

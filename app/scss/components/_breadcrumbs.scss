@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     white-space: normal;
     margin-bottom: 48px;
+    gap: 5px 0;
+    @include r($phone) {
+      margin-bottom: 38px;
+    }
   }
 
   &__item {

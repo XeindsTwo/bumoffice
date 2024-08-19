@@ -1,21 +1,82 @@
 .product-details {
   margin-top: 40px;
   margin-bottom: 90px;
+  @media (max-width: 860px) {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+  @media (max-width: 680px) {
+    margin-top: 25px;
+  }
+  @include r($sm) {
+    margin-bottom: 60px;
+  }
 
   &__content {
     @include flex-align-center(60);
     align-items: flex-start;
     margin-bottom: 60px;
+    @include r($desktop) {
+      gap: 50px;
+    }
+    @include r($lg) {
+      gap: 40px;
+      margin-bottom: 45px;
+    }
+    @media (max-width: 860px) {
+      gap: 35px;
+    }
+    @include r($tablet) {
+      flex-direction: column-reverse;
+    }
+    @include r($phone) {
+      gap: 30px;
+    }
   }
 
   &__img {
     @include objectCoverBg;
     border-radius: 15px;
+    @include r($desktop) {
+      width: 500px;
+      height: 500px;
+      border-radius: 11px;
+    }
+    @include r($lg) {
+      width: 430px;
+      height: 430px;
+    }
+    @media (max-width: 860px) {
+      width: 400px;
+      height: 400px;
+    }
+    @include r($tablet) {
+      margin: 0 auto;
+      width: 430px;
+      height: 430px;
+    }
+    @include r($sm) {
+      width: 390px;
+      height: 390px;
+    }
+    @include r($phone) {
+      width: 100%;
+      border-radius: 7px;
+    }
+    @media (max-width: 405px) {
+      height: 360px;
+    }
+    @media (max-width: 385px) {
+      height: 340px;
+    }
   }
 
   &__info {
     max-width: 600px;
     padding-top: 30px;
+    @include r($tablet) {
+      padding-top: 0;
+    }
   }
 
   &__availability {
@@ -23,9 +84,15 @@
     font-size: 15px;
     line-height: 1;
     margin-bottom: 25px;
+    @media (max-width: 860px) {
+      font-size: 14px;
+    }
 
     img {
       transform: translateY(-1px);
+      @media (max-width: 860px) {
+        transform: none;
+      }
     }
   }
 
@@ -33,6 +100,38 @@
     font-size: 36px;
     font-weight: 500;
     margin-bottom: 50px;
+    @media (max-width: 1300px) {
+      font-size: 32px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 28px;
+    }
+    @include r($lg) {
+      font-size: 24px;
+    }
+    @media (max-width: 860px) {
+      font-size: 22px;
+    }
+    @include r($tablet) {
+      margin-bottom: 0;
+    }
+    @media (max-width: 390px) {
+      font-size: 20px;
+    }
+  }
+
+  &__form {
+    @include r($tablet) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      order: -1;
+      @include r($tablet) {
+        display: block;
+      }
+    }
   }
 
   &__price {
@@ -40,6 +139,16 @@
     font-weight: 400;
     margin-bottom: 15px;
     display: inline-block;
+    @media (max-width: 1100px) {
+      font-size: 22px;
+    }
+    @media (max-width: 860px) {
+      font-size: 20px;
+    }
+    @include r($sm) {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
   }
 
   &__cart {
@@ -49,6 +158,9 @@
     border: 1px solid $black;
     overflow: hidden;
     margin-bottom: 25px;
+    @media (max-width: 1100px) {
+      margin-bottom: 20px;
+    }
   }
 
   &__btn {
@@ -56,7 +168,11 @@
     min-height: 45px;
     width: 45px;
     outline: 1px solid transparent;
-    transition: background-color .4s;
+    transition: background-color .4s, outline .4s;
+    @media (max-width: 860px) {
+      min-height: 42px;
+      width: 40px;
+    }
 
     &:hover {
       background-color: $black;
@@ -80,6 +196,11 @@
     min-height: 45px;
     max-width: 50px;
     padding: 0 10px;
+    @media (max-width: 860px) {
+      min-height: 42px;
+      max-width: 40px;
+      padding: 0 4px;
+    }
   }
 
   &__add {
@@ -90,6 +211,12 @@
     background-color: $gold;
     color: $white;
     transition: background-color .4s, border .4s, color .4s;
+    @media (max-width: 860px) {
+      padding: 14px 45px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
 
     &:hover {
       background-color: transparent;
@@ -110,6 +237,10 @@
     font-weight: 500;
     color: $gold200;
     margin-bottom: 20px;
+    @include r($tablet) {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
   }
 
   &__description {
