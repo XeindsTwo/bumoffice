@@ -7,12 +7,14 @@
   <meta name="description" content="Описание сайта">
   <meta http-equiv="content-type" content="public, max-age=3600">
   <meta name="theme-color" content="#fff">
-  <title>БумОфис | Детали товара</title>
+  <title>Корзина товаров</title>
   <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body class="body body--grid">
-<header>
+<div class="wrapper">
+  <header>
   <div class="container">
     <div class="header__inner">
       <div class="header__logo">
@@ -121,130 +123,141 @@
     </nav>
   </div>
 </header>
-<main>
-  <section class="product-details">
-    <div class="container">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link breadcrumbs__link--nav" href="/">Главная</a>
-        </li>
-        <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link breadcrumbs__link--nav" href="catalog.html">Каталог товаров</a>
-        </li>
-        <li class="breadcrumbs__item">
-          <span class="breadcrumbs__link">
-            Планировщик задач на 2024-2025 учебный год
-          </span>
-        </li>
-      </ul>
-      <div class="product-details__content">
-        <img class="product-details__img" width="550" height="550" src="images/product.webp" alt="Название товара">
-        <div class="product-details__info">
-          <div class="product-details__availability">
-            <img src="images/icons/is_availability.svg" width="22" height="22" alt="иконка наличие товара">
-            Есть в наличии
-          </div>
-          <h1 class="product-details__title">
-            Книга планировщик задач на 2024-2025 учебный год
-          </h1>
-          <form class="product-details__form" action="">
-            <span class="product-details__price">
-              3 400 ₽
-            </span>
-            <div class="product-details__cart">
-              <button class="product-details__btn decrement" type="button">
-                <span class="sr-only">Убавить количество товара на 1</span>
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
-                     class="icon icon-minus" fill="none" viewBox="0 0 10 2">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
-                        fill="currentColor">
-                  </path>
-                </svg>
-              </button>
-              <input class="product-details__input quantity" value="1" type="number" name="quantity"
-                     placeholder="">
-              <button class="product-details__btn increment" type="button">
-                <span class="sr-only">Прибавить количество товара на 1</span>
-                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
-                     class="icon icon-plus" fill="none" viewBox="0 0 10 10">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                        d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-                        fill="currentColor"></path>
-                </svg>
-              </button>
-            </div>
-            <button class="product-details__add" type="submit">Добавить в корзину</button>
-          </form>
-        </div>
-        <form class="product-details__form mobile" action="">
-            <span class="product-details__price">
-              Цена - 3 400 ₽
-            </span>
-          <div class="product-details__cart">
-            <button class="product-details__btn decrement" type="button">
-              <span class="sr-only">Убавить количество товара на 1</span>
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
-                   class="icon icon-minus" fill="none" viewBox="0 0 10 2">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z"
-                      fill="currentColor">
-                </path>
-              </svg>
-            </button>
-            <input class="product-details__input quantity" value="1" type="number" name="quantity"
-                   placeholder="">
-            <button class="product-details__btn increment" type="button">
-              <span class="sr-only">Прибавить количество товара на 1</span>
-              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation"
-                   class="icon icon-plus" fill="none" viewBox="0 0 10 10">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z"
-                      fill="currentColor"></path>
-              </svg>
-            </button>
-          </div>
-          <button class="product-details__add" type="submit">Добавить в корзину</button>
-        </form>
+  <main>
+    <section class="cart">
+      <div class="container">
+        <h1 class="title">Ваша корзина</h1>
+        <!--<p class="cart__text">
+          Ваша корзина ещё пуста. Начните с главной страницы, и вы всё найдёте
+        </p>
+        <a class="cart__link" href="/">На главную</a>-->
+        <p class="cart__text">
+          Вы можете сформировать и отправить нам свой заказ <br>
+          В течение ближайшего времени мы сделаем расчет и пришлем вам всю информацию <br>
+          Стоимость всего заказа может меняться
+        </p>
+        <table class="cart__table">
+          <tbody class="cart__body">
+          <tr class="cart__top">
+            <td>Наименование</td>
+            <td class="price_ed">Стоимость (ед.)</td>
+            <td class="quantity">Количество</td>
+            <td class="price">Стоимость</td>
+            <td class="action center">Удалить</td>
+          </tr>
+          <tr class="cart__product">
+            <td>
+              <a class="cart__product-link" href="product-details.html">Книга планировщик задач на 2024-2025 учебный
+                год</a>
+            </td>
+            <td>
+              <p>1 700 руб.</p>
+            </td>
+            <td>
+              <form method="post" role="form">
+                <div class="cart__number">
+                  <button class="cart__btn remove" type="button">
+                    <span class="sr-only">Убавить количество товара на 1</span>
+                    <svg viewBox="0 0 17 16" xmlns="https://www.w3.org/2000/svg">
+                      <rect x="1" y="9" width="2" height="16" rx="1" transform="rotate(-90.0355 1 9)"></rect>
+                    </svg>
+                  </button>
+                  <input class="cart__value" type="number" name="count" value="1">
+                  <button class="cart__btn add" type="button">
+                    <span class="sr-only">Прибавить количество товара на 1</span>
+                    <svg viewBox="0 0 17 16" xmlns="https://www.w3.org/2000/svg">
+                      <rect x="8" width="2" height="16" rx="1"></rect>
+                      <rect x="1" y="9" width="2" height="16" rx="1" transform="rotate(-90.0355 1 9)"></rect>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p><span class="cart__price">1 700</span> руб.</p>
+            </td>
+            <td>
+              <form class="cart__form" method="post">
+                <input type="hidden" name="key" id="example_arkadiy">
+                <button class="cart__delete" type="submit" name="ms2_action" value="cart/remove">
+                  <svg class="svg_icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24.8438 3.75H19.6875V2.8125C19.6875 1.2617 18.4258 0 16.875 0H13.125C11.5742 0 10.3125 1.2617 10.3125 2.8125V3.75H5.15625C3.86391 3.75 2.8125 4.80141 2.8125 6.09375V9.375C2.8125 9.89273 3.23227 10.3125 3.75 10.3125H4.26234L5.07229 27.3213C5.14383 28.8234 6.37781 30 7.88156 30H22.1184C23.6222 30 24.8562 28.8234 24.9277 27.3213L25.7377 10.3125H26.25C26.7677 10.3125 27.1875 9.89273 27.1875 9.375V6.09375C27.1875 4.80141 26.1361 3.75 24.8438 3.75ZM12.1875 2.8125C12.1875 2.29559 12.6081 1.875 13.125 1.875H16.875C17.3919 1.875 17.8125 2.29559 17.8125 2.8125V3.75H12.1875V2.8125ZM4.6875 6.09375C4.6875 5.83529 4.89779 5.625 5.15625 5.625H24.8438C25.1022 5.625 25.3125 5.83529 25.3125 6.09375V8.4375C25.0236 8.4375 5.88475 8.4375 4.6875 8.4375V6.09375ZM23.0548 27.2321C23.031 27.7328 22.6196 28.125 22.1184 28.125H7.88156C7.38029 28.125 6.96896 27.7328 6.94518 27.2321L6.13945 10.3125H23.8605L23.0548 27.2321Z"></path>
+                    <path
+                        d="M15 26.25C15.5177 26.25 15.9375 25.8302 15.9375 25.3125V13.125C15.9375 12.6073 15.5177 12.1875 15 12.1875C14.4823 12.1875 14.0625 12.6073 14.0625 13.125V25.3125C14.0625 25.8302 14.4822 26.25 15 26.25Z"></path>
+                    <path
+                        d="M19.6875 26.25C20.2052 26.25 20.625 25.8302 20.625 25.3125V13.125C20.625 12.6073 20.2052 12.1875 19.6875 12.1875C19.1698 12.1875 18.75 12.6073 18.75 13.125V25.3125C18.75 25.8302 19.1697 26.25 19.6875 26.25Z"></path>
+                    <path
+                        d="M10.3125 26.25C10.8302 26.25 11.25 25.8302 11.25 25.3125V13.125C11.25 12.6073 10.8302 12.1875 10.3125 12.1875C9.79477 12.1875 9.375 12.6073 9.375 13.125V25.3125C9.375 25.8302 9.79471 26.25 10.3125 26.25Z"></path>
+                  </svg>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <tr class="cart__product">
+            <td>
+              <a class="cart__product-link" href="product-details.html">
+                Ручка Pilot
+              </a>
+            </td>
+            <td>
+              <p>700 руб.</p>
+            </td>
+            <td>
+              <form method="post" role="form">
+                <div class="cart__number">
+                  <button class="cart__btn remove" type="button">
+                    <span class="sr-only">Убавить количество товара на 1</span>
+                    <svg viewBox="0 0 17 16" xmlns="https://www.w3.org/2000/svg">
+                      <rect x="1" y="9" width="2" height="16" rx="1" transform="rotate(-90.0355 1 9)"></rect>
+                    </svg>
+                  </button>
+                  <input class="cart__value" type="number" name="count" value="1">
+                  <button class="cart__btn add" type="button">
+                    <span class="sr-only">Прибавить количество товара на 1</span>
+                    <svg viewBox="0 0 17 16" xmlns="https://www.w3.org/2000/svg">
+                      <rect x="8" width="2" height="16" rx="1"></rect>
+                      <rect x="1" y="9" width="2" height="16" rx="1" transform="rotate(-90.0355 1 9)"></rect>
+                    </svg>
+                  </button>
+                </div>
+              </form>
+            </td>
+            <td>
+              <p><span class="cart__price">700</span> руб.</p>
+            </td>
+            <td>
+              <form class="cart__form" method="post">
+                <input type="hidden" name="key" id="example_arkadiy">
+                <button class="cart__delete" type="submit" name="ms2_action" value="cart/remove">
+                  <svg class="svg_icon" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M24.8438 3.75H19.6875V2.8125C19.6875 1.2617 18.4258 0 16.875 0H13.125C11.5742 0 10.3125 1.2617 10.3125 2.8125V3.75H5.15625C3.86391 3.75 2.8125 4.80141 2.8125 6.09375V9.375C2.8125 9.89273 3.23227 10.3125 3.75 10.3125H4.26234L5.07229 27.3213C5.14383 28.8234 6.37781 30 7.88156 30H22.1184C23.6222 30 24.8562 28.8234 24.9277 27.3213L25.7377 10.3125H26.25C26.7677 10.3125 27.1875 9.89273 27.1875 9.375V6.09375C27.1875 4.80141 26.1361 3.75 24.8438 3.75ZM12.1875 2.8125C12.1875 2.29559 12.6081 1.875 13.125 1.875H16.875C17.3919 1.875 17.8125 2.29559 17.8125 2.8125V3.75H12.1875V2.8125ZM4.6875 6.09375C4.6875 5.83529 4.89779 5.625 5.15625 5.625H24.8438C25.1022 5.625 25.3125 5.83529 25.3125 6.09375V8.4375C25.0236 8.4375 5.88475 8.4375 4.6875 8.4375V6.09375ZM23.0548 27.2321C23.031 27.7328 22.6196 28.125 22.1184 28.125H7.88156C7.38029 28.125 6.96896 27.7328 6.94518 27.2321L6.13945 10.3125H23.8605L23.0548 27.2321Z"></path>
+                    <path
+                        d="M15 26.25C15.5177 26.25 15.9375 25.8302 15.9375 25.3125V13.125C15.9375 12.6073 15.5177 12.1875 15 12.1875C14.4823 12.1875 14.0625 12.6073 14.0625 13.125V25.3125C14.0625 25.8302 14.4822 26.25 15 26.25Z"></path>
+                    <path
+                        d="M19.6875 26.25C20.2052 26.25 20.625 25.8302 20.625 25.3125V13.125C20.625 12.6073 20.2052 12.1875 19.6875 12.1875C19.1698 12.1875 18.75 12.6073 18.75 13.125V25.3125C18.75 25.8302 19.1697 26.25 19.6875 26.25Z"></path>
+                    <path
+                        d="M10.3125 26.25C10.8302 26.25 11.25 25.8302 11.25 25.3125V13.125C11.25 12.6073 10.8302 12.1875 10.3125 12.1875C9.79477 12.1875 9.375 12.6073 9.375 13.125V25.3125C9.375 25.8302 9.79471 26.25 10.3125 26.25Z"></path>
+                  </svg>
+                </button>
+              </form>
+            </td>
+          </tr>
+          <tr class="cart__bottom">
+            <td class="cart__total">Общая стоимость:</td>
+            <td class="price_ed"></td>
+            <td class="quantity"></td>
+            <td class="cart__total-cost price">7 880 руб.</td>
+            <td class="action center"></td>
+          </tr>
+          </tbody>
+        </table>
+        <a class="cart__offer" href="">Оформить заказ</a>
       </div>
-      <span class="product-details__subtitle">Описание товара</span>
-      <div class="product-details__description">
-        Поднимите свое академическое планирование на новый уровень с помощью Планировщика задач на 2024-2025 учебный год
-        от Appointed в цвете Sky Blue. Всегда популярен среди студентов, профессионалов и дизайнеров благодаря простоте
-        использования и стильному минималистичному дизайну. Идеальный размер для того, чтобы положить его в сумку для
-        книг, когда вы переключаетесь между повседневными делами.
-        <br>
-        <br>
-        Каждый двухстраничный разворот включает недельный обзор слева и полную страницу справа для выделения
-        приоритетов, создания заметок и составления списка задач. Он даже имеет отмечаемые флажками поля для
-        удовлетворительного завершения. Ламинированные ежемесячные вкладки позволяют легко перемещаться в течение года.
-        <br>
-        <br>
-        Этот роскошный ежедневник имеет водонепроницаемую обложку из ткани, переплет из латунной проволоки и обложку с
-        тонким тиснением фольгой.
-        <br>
-        <br>
-        Планировщик задач на учебный год датирован и действует с августа 2024 года по июль 2025 года.
-      </div>
-      <span class="product-details__subtitle">Основные характеристики</span>
-      <ul class="product-details__characteristics">
-        <li>Водонепроницаемая обложка для книги</li>
-        <li>Гладкая, высококачественная 70-фунтовая текстовая ложа</li>
-        <li>Ламинированные вкладки с месяцами</li>
-        <li>Тисненые фольгой обложки</li>
-        <li>Переплет из латунной проволоки</li>
-        <li>Одна разлинованная страница для заметок в конце каждого месяца.</li>
-        <li>Обзор года</li>
-        <li>Таблица преобразования</li>
-        <li>Ежемесячные цели</li>
-        <li>Ежемесячный спред, включая основные праздники</li>
-        <li>Распределение недель и задач</li>
-        <li>авг. 2023 г. - июль 2024 г.</li>
-        <li>12-месячный</li>
-        <li>158 страниц</li>
-      </ul>
-    </div>
-  </section>
-</main>
-<footer class="footer" id="community">
+    </section>
+  </main>
+  <footer class="footer" id="community">
   <div class="container">
     <nav class="footer__nav">
       <ul class="footer__list">
@@ -300,6 +313,6 @@
     </div>
   </div>
 </footer>
+</div>
 </body>
 <script src="js/components/mobile-menu.js" defer></script>
-<script src="js/components/add-to-cart.js" defer></script>

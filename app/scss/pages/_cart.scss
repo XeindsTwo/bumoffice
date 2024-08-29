@@ -1,0 +1,263 @@
+.cart {
+  margin-top: 70px;
+  margin-bottom: 120px;
+  @media (max-width: 1140px) {
+    margin-top: 40px;
+  }
+  @include r($lg) {
+    margin-bottom: 100px;
+  }
+  @include r($sm) {
+    margin-top: 30px;
+    margin-bottom: 80px;
+  }
+
+  &__text {
+    opacity: .8;
+  }
+
+  &__link {
+    margin-top: 20px;
+    padding: 14px 22px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .33s, border-color .33s, color .33s;
+    background-color: $gold200;
+    border: 1px solid $gold200;
+    color: $white;
+
+    &:hover {
+      background-color: transparent;
+      color: $black;
+    }
+  }
+
+  &__table {
+    margin-top: 30px;
+    width: 100%;
+    background: #f8f7f7;
+    border-radius: 8px;
+    overflow: hidden;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    td {
+      border: #e8e5e5 1px solid;
+      border-top: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      padding: 23px 30px;
+      @include r($desktop) {
+        padding: 21px 22px;
+      }
+
+      &.center {
+        text-align: center;
+      }
+    }
+
+    td:nth-child(1) {
+      white-space: normal;
+      border-left: none;
+    }
+
+    td:nth-child(5) {
+      border-right: none;
+    }
+  }
+
+  &__top {
+    font-weight: 500;
+    font-size: 17px;
+    @include r($desktop) {
+      font-size: 16px;
+    }
+
+    & td.price_ed {
+      width: 190px;
+      @include r($desktop) {
+        width: 170px;
+      }
+    }
+
+    & td.price {
+      width: 175px;
+      @include r($desktop) {
+        width: 160px;
+      }
+    }
+
+    & td.quantity {
+      width: 180px;
+      @include r($desktop) {
+        width: 170px;
+      }
+    }
+
+    & td.action {
+      width: 140px;
+      @include r($desktop) {
+        width: 100px;
+      }
+    }
+  }
+
+  &__product {
+    &-link {
+      transition: outline .4s, border .4s;
+      padding-bottom: 2px;
+      outline: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      opacity: .8;
+
+      &:hover {
+        border-bottom-color: $black;
+      }
+
+      &:focus {
+        border-bottom-color: transparent;
+        outline-color: $black;
+      }
+    }
+  }
+
+  &__bottom {
+    td {
+      font-weight: 500;
+      border-bottom: none;
+      font-size: 17px;
+      @include r($desktop) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__total {
+    font-size: 17px;
+    color: #fb7900;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__delete {
+    display: flex;
+    outline: 1px solid transparent;
+    padding: 3px 2px;
+    border-radius: 3px;
+    transition: outline .4s;
+
+    &:hover {
+      svg path {
+        fill: red;
+      }
+    }
+
+    &:focus {
+      outline-color: darkred;
+
+      svg path {
+        fill: darkred;
+      }
+    }
+
+    svg {
+      width: 30px;
+      @include r($desktop) {
+        width: 27px;
+      }
+
+      path {
+        fill: darkred;
+      }
+    }
+  }
+
+  &__number {
+    @include flex-center;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  &__value {
+    width: 60px;
+    min-height: 35px;
+    text-align: center;
+    background-color: $white;
+  }
+
+  &__btn {
+    @include flex-center;
+    min-height: 35px;
+    width: 30px;
+    padding: 7px;
+    background-color: $gold200;
+    border-radius: 6px 0 0 6px;
+    border: 1px solid transparent;
+    transition: background-color .4s, border .4s;
+
+    &:hover {
+      background-color: transparent;
+      border-color: $gold200;
+
+      svg rect {
+        fill: $black;
+      }
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: $black;
+
+      svg rect {
+        fill: $black;
+      }
+    }
+
+    &.remove svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    &.add {
+      border-radius: 0 6px 6px 0;
+    }
+
+    &.add svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    svg rect {
+      fill: $white;
+    }
+  }
+
+  &__offer {
+    margin-top: 30px;
+    display: flex;
+    max-width: max-content;
+    padding: 15px 26px;
+    border-radius: 6px;
+    background-color: transparent;
+    border: 1px solid $gold200;
+    transition: color .4s, background-color .4s, border .4s, opacity .4s;
+
+    &:hover {
+      background-color: #e56f00;
+      border-color: transparent;
+      color: $white;
+    }
+
+    &:focus {
+      border-color: $gold200;
+      color: $black;
+      background-color: rgba($gold200, .1);
+    }
+  }
+}
