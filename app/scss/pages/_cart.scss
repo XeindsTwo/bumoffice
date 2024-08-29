@@ -310,6 +310,10 @@
       }
     }
 
+    &:disabled {
+      pointer-events: none;
+    }
+
     &.remove svg {
       width: 14px;
       height: 14px;
