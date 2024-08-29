@@ -37,20 +37,38 @@
   &__table {
     margin-top: 30px;
     width: 100%;
-    background: #f8f7f7;
+    background: rgba($gold200, .06);
     border-radius: 8px;
     overflow: hidden;
     border-collapse: collapse;
     border-spacing: 0;
+    @media (max-width: 910px) {
+      font-size: 14px;
+    }
+    @media (max-width: 860px) {
+      background-color: transparent;
+    }
 
     td {
-      border: #e8e5e5 1px solid;
+      border: rgba($black, .1) 1px solid;
       border-top: none;
       vertical-align: middle;
       white-space: nowrap;
       padding: 23px 30px;
       @include r($desktop) {
         padding: 21px 22px;
+      }
+      @media (max-width: 910px) {
+        padding: 19px 20px;
+      }
+      @media (max-width: 860px) {
+        border: none;
+        width: 100%;
+        display: block;
+        padding: 15px 18px;
+      }
+      @include r($phone) {
+        padding: 15px 14px;
       }
 
       &.center {
@@ -74,11 +92,17 @@
     @include r($desktop) {
       font-size: 16px;
     }
+    @media (max-width: 860px) {
+      display: none;
+    }
 
     & td.price_ed {
       width: 190px;
       @include r($desktop) {
         width: 170px;
+      }
+      @media (max-width: 910px) {
+        width: 160px;
       }
     }
 
@@ -87,12 +111,18 @@
       @include r($desktop) {
         width: 160px;
       }
+      @media (max-width: 910px) {
+        width: 140px;
+      }
     }
 
     & td.quantity {
       width: 180px;
       @include r($desktop) {
         width: 170px;
+      }
+      @media (max-width: 910px) {
+        width: 155px;
       }
     }
 
@@ -105,6 +135,15 @@
   }
 
   &__product {
+    @media (max-width: 860px) {
+      display: block;
+      border-radius: 6px;
+      background-color: rgba($gold200, .07);
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
     &-link {
       transition: outline .4s, border .4s;
       padding-bottom: 2px;
@@ -121,9 +160,32 @@
         outline-color: $black;
       }
     }
+
+    td {
+      &:not(:last-child) {
+        @media (max-width: 860px) {
+          border-bottom: rgba($black, .15) 1px solid;
+        }
+      }
+
+      &:nth-child(3), &:nth-child(5) {
+        @media (max-width: 860px) {
+          @include flex-align-center(15);
+          justify-content: space-between;
+        }
+      }
+    }
   }
 
   &__bottom {
+    @media (max-width: 860px) {
+      display: block;
+      margin-top: 30px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba($gold200, .06);
+    }
+
     td {
       font-weight: 500;
       border-bottom: none;
@@ -131,12 +193,38 @@
       @include r($desktop) {
         font-size: 16px;
       }
+      @media (max-width: 910px) {
+        font-size: 15px;
+      }
+
+      &:nth-child(1) {
+        @media (max-width: 860px) {
+          width: 100%;
+          display: block;
+          border-right: none;
+          border-bottom: rgba($black, .15) 1px solid;
+        }
+      }
+
+      &:nth-child(2), &:nth-child(3), &:nth-child(5) {
+        @media (max-width: 860px) {
+          display: none;
+        }
+      }
     }
   }
 
   &__total {
     font-size: 17px;
     color: #fb7900;
+
+    &-cost {
+      @media (max-width: 860px) {
+        display: block;
+        width: 100%;
+        border-right: none;
+      }
+    }
   }
 
   &__form {
@@ -189,6 +277,9 @@
     min-height: 35px;
     text-align: center;
     background-color: $white;
+    @media (max-width: 910px) {
+      width: 50px;
+    }
   }
 
   &__btn {
@@ -247,6 +338,10 @@
     background-color: transparent;
     border: 1px solid $gold200;
     transition: color .4s, background-color .4s, border .4s, opacity .4s;
+    @include r($phone) {
+      font-size: 14px;
+      padding: 14px 24px;
+    }
 
     &:hover {
       background-color: #e56f00;
@@ -258,6 +353,24 @@
       border-color: $gold200;
       color: $black;
       background-color: rgba($gold200, .1);
+    }
+  }
+
+  &__mobile {
+    display: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    @media (max-width: 860px) {
+      display: flex;
+    }
+    @include r($phone) {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    &.non {
+      margin-bottom: 0;
     }
   }
 }
