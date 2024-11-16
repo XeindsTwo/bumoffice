@@ -6,6 +6,7 @@
     }
     @include r($desktop) {
       flex-direction: column;
+      align-items: flex-start;
     }
     @media (max-width: 720px) {
       align-items: flex-start;
@@ -261,6 +262,9 @@
     }
 
     &-slide {
+      min-width: 340px;
+      max-width: 340px;
+
       @include r($tablet) {
         min-width: 270px;
         max-width: 270px;
