@@ -66,3 +66,62 @@
     resize: none;
   }
 }
+
+.label {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+  display: block;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.error {
+  color: #d04141;
+  display: none;
+  margin-bottom: 6px;
+  font-size: 14px;
+
+  &--active {
+    display: block;
+  }
+
+  &--not-bottom {
+    margin-bottom: 2px;
+  }
+}
+
+.password-field {
+  position: relative
+}
+
+.password-field__btn {
+  @include bg;
+  display: flex;
+  position: absolute;
+  width: 25px;
+  height: 24px;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  outline: 1px solid rgba(0, 0, 0, 0);
+  transition: outline-color .4s, opacity .4s;
+  background-image: url("../../images/icons/eye-closed.svg");
+  @include r($sm) {
+    width: 21px;
+    height: 24px;
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:focus {
+    outline-color: $gold200;
+  }
+
+  &.active {
+    background-image: url("../../images/icons/eye-open.svg");
+  }
+}

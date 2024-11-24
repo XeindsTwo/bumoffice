@@ -1,0 +1,261 @@
+.profile {
+  margin: 60px 0 40px;
+  @media (max-width: 1140px) {
+    margin-top: 45px;
+  }
+  @include r($lg) {
+
+  }
+  @media (max-width: 680px) {
+    margin-top: 35px;
+  }
+  @include r($sm) {
+    margin-bottom: 30px;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    max-width: max-content;
+    color: #83888f;
+    transition: color .4s, opacity .4s, border .4s;
+    margin-bottom: 35px;
+
+    @include r($lg) {
+      font-size: 16px;
+      margin-bottom: 25px;
+      gap: 10px;
+
+      svg {
+        width: auto;
+        height: 15px;
+      }
+    }
+
+    &:hover {
+      color: $gold200;
+
+      svg path {
+        stroke: $gold200
+      }
+    }
+
+    &:focus {
+      color: #2f323c;
+
+      svg {
+        transform: translateX(-4px);
+
+        path {
+          stroke: #2f323c;
+        }
+      }
+    }
+
+    svg {
+      transition: transform .4s;
+    }
+  }
+
+  &__info {
+    position: relative;
+    display: flex;
+    gap: 48px;
+    padding: 50px 40px 40px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 12px 64px -16px rgba(0, 0, 0, .20);
+
+    @include r($tablet) {
+      padding: 25px 0 40px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 34px
+    }
+
+    @include r($sm) {
+      box-shadow: none;
+      background: #f5f5f5
+    }
+
+    @include r($phone) {
+      margin: 0 -15px
+    }
+
+    @media (max-width: 390px) {
+      border-radius: 14px
+    }
+  }
+
+  &__avatar {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    align-items: center;
+    max-width: 160px;
+
+    @include r($tablet) {
+      max-width: 100%;
+      gap: 20px;
+    }
+
+    @include r($phone) {
+      gap: 16px
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 50%;
+
+    @include r($phone) {
+      width: 150px;
+      height: 150px;
+    }
+
+    @media (max-width: 390px) {
+      width: 140px;
+      height: 140px
+    }
+  }
+
+  &__edit-avatar {
+    line-height: 1;
+    padding-top: 2px;
+    transition: color .4s, outline-color .4s;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    outline: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include r($lg) {
+      font-size: 15px;
+
+      svg {
+        width: auto;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      color: $gold200;
+
+      svg path {
+        stroke: $gold200
+      }
+    }
+
+    &:focus {
+      outline-color: $gold200;
+    }
+
+    svg {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__name {
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: 52px;
+    margin-bottom: 32px;
+
+    @include r($lg) {
+      font-size: 36px;
+    }
+
+    @include r($tablet) {
+      margin-top: 0;
+      font-size: 34px;
+      margin-bottom: 24px;
+    }
+
+    @include r($sm) {
+      font-size: 30px;
+    }
+
+    @include r($phone) {
+      font-size: 28px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 500;
+    color: #111;
+
+    @include r($tablet) {
+      align-items: center;
+    }
+  }
+
+  &__logout {
+    padding: 1px 0;
+    align-self: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0);
+    color: #ff1515;
+    border-radius: 6px;
+    margin-bottom: -3px;
+    transition: color .3s, border .3s;
+    @include r($lg) {
+      font-size: 15px;
+    }
+
+    &:hover {
+      color: #af2d26;
+    }
+
+    &:focus {
+      color: #ff1515;
+      border-color: #ff1515
+    }
+
+    @include r($tablet) {
+      margin: 0 auto -4px;
+    }
+  }
+
+  &__edit-data {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    right: 40px;
+    top: 42px;
+    color: #83888f;
+    border-radius: 6px;
+    border: 1px solid rgba(#000, 0);
+    padding: 5px;
+    transition: color .4s, border .4s;
+    @include r($lg) {
+      font-size: 15px;
+      top: 24px;
+      right: 24px;
+    }
+    @include r($tablet) {
+      position: static;
+      order: -1;
+      margin-bottom: -20px;
+    }
+
+    &:hover {
+      color: $gold200;
+
+      svg path {
+        stroke: $gold200
+      }
+    }
+
+    &:focus {
+      border-color: $gold200
+    }
+  }
+}

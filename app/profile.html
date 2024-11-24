@@ -7,10 +7,12 @@
   <meta name="description" content="Описание сайта">
   <meta http-equiv="content-type" content="public, max-age=3600">
   <meta name="theme-color" content="#fff">
-  <title>Поиск товаров</title>
+  <title>БумОфис | Личный кабинет</title>
   <link rel="shortcut icon" href="images/icons/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<body class="body">
 <header>
   <div class="container">
     <div class="header__inner">
@@ -126,229 +128,168 @@
     </nav>
   </div>
 </header>
-<body class="body">
 <main>
-  <section class="catalog">
-    <div class="container">
-      <div class="catalog__top">
-        <h1 class="catalog__title title title--bottom">Поиск товаров</h1>
-        <button class="catalog__filters-btn" id="catalog-filters-open" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" focusable="false" tabindex="-1"
-               width="16" height="16" viewBox="0 0 24 24">
-            <path fill="none" stroke="#101010" stroke-width="2"
-                  d="M19 3H5c-1.414 0-2.121 0-2.56.412C2 3.824 2 4.488 2 5.815v.69c0 1.037 0 1.556.26 1.986c.26.43.733.698 1.682 1.232l2.913 1.64c.636.358.955.537 1.183.735c.474.411.766.895.898 1.49c.064.284.064.618.064 1.285v2.67c0 .909 0 1.364.252 1.718c.252.355.7.53 1.594.88c1.879.734 2.818 1.101 3.486.683c.668-.417.668-1.372.668-3.282v-2.67c0-.666 0-1 .064-1.285a2.68 2.68 0 0 1 .899-1.49c.227-.197.546-.376 1.182-.735l2.913-1.64c.948-.533 1.423-.8 1.682-1.23c.26-.43.26-.95.26-1.988v-.69c0-1.326 0-1.99-.44-2.402C21.122 3 20.415 3 19 3Z"></path>
-          </svg>
-          Фильтры
-        </button>
-      </div>
-      <p class="catalog__search">
-        По вашему запросу <span>«value»</span> мы нашли товары:
-      </p>
-      <div class="catalog__inner">
-        <div class="catalog__filters">
-          <button class="catalog__close" id="catalog-filters-close" type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M1.2 12L0 10.8L4.8 6L0 1.2L1.2 0L6 4.8L10.8 0L12 1.2L7.2 6L12 10.8L10.8 12L6 7.2L1.2 12Z"
-                    fill="black"/>
+  <section class="profile">
+    <div class="container container--profile">
+      <a class="profile__back" href="/">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16.5833 9.00001H1.41663M1.41663 9.00001L8.99996 16.5833M1.41663 9.00001L8.99996 1.41667"
+                stroke="#83888F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Вернуться на главную
+      </a>
+      <div class="profile__info">
+        <div class="profile__avatar">
+          <!--По умолчанию будет стоять дефолтный аватар (в зависимости от условий в общем)-->
+          <img class="profile__img"
+               src="images/avatar.png"
+               width="160" height="160"
+               alt="Аватар по умолчанию"
+          >
+          <button class="profile__edit-avatar" type="button">
+            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_11401_4262)">
+                <path
+                    d="M23.5 4V10M23.5 10H17.5M23.5 10L18.87 5.64C17.4906 4.25974 15.7 3.36518 13.768 3.09114C11.8359 2.8171 9.86717 3.17841 8.15836 4.12064C6.44954 5.06286 5.09325 6.53495 4.29386 8.31507C3.49448 10.0952 3.29531 12.0869 3.72637 13.9901C4.15743 15.8932 5.19536 17.6047 6.68376 18.8667C8.17216 20.1286 10.0304 20.8726 11.9784 20.9866C13.9265 21.1006 15.8588 20.5783 17.4842 19.4985C19.1096 18.4187 20.34 16.8399 20.99 15"
+                    stroke="#83888F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_11401_4262">
+                  <rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+                </clipPath>
+              </defs>
             </svg>
-            Закрыть настройки
+            Изменить
           </button>
-          <div class="catalog__column short">
-            <label for="availability-select">Сортировать по наличию:</label>
-            <select id="availability-select" name="availability-select">
-              <option selected value="default">По умолчанию</option>
-              <option value="is_availability">Есть в наличии</option>
-              <option value="is_not_availability">Нет в наличии</option>
-            </select>
-          </div>
-          <div class="catalog__column short">
-            <label for="price-select">Сортировать по цене:</label>
-            <select id="price-select" name="price-select">
-              <option selected value="default">По умолчанию</option>
-              <option value="low_to_high">По возрастанию цены</option>
-              <option value="high_to_low">По убыванию цены</option>
-            </select>
+        </div>
+        <div>
+          <h1 class="profile__name" id="profile-name">Артём Гонгадзе</h1>
+          <div class="profile__list">
+            <!-- если имя не нужно, то будем вырезать -->
+            <!-- здесь сделаешь уже выход на Python + отображение данных (почта, логин, сверху имя будет) -->
+            <a class="profile__logout" href="logout">Выйти из аккаунта</a>
+            <span id="profile-email">test@gmail.com</span>
+            <span>loginForUserTest</span>
           </div>
         </div>
-        <ul class="catalog__rows">
-          <li class="catalog__row">
-            <span class="catalog__subtitle">Папки и системы архивации</span>
-            <ul class="catalog__items">
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="catalog__row">
-            <span class="catalog__subtitle">Офисная техника</span>
-            <ul class="catalog__items">
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <li class="catalog__row">
-            <span class="catalog__subtitle">Канцелярские мелочи</span>
-            <ul class="catalog__items">
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-              <li class="catalog__item">
-                <div class="catalog__image">
-                  <img src="images/pr-1.png" height="230" alt="имя товара">
-                </div>
-                <div class="catalog__content">
-                  <span class="catalog__price">10 050₽</span>
-                  <span class="catalog__name">
-                Ручка шариковая автоматическая Pilot BPGP-10R-F синяя (толщина линии 0.22 мм)
-              </span>
-                  <a class="catalog__more" href="product-details.html">Узнать подробнее</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <button class="profile__edit-data" type="button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M11 4H4C3.46957 4 2.96086 4.21072 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13M18.5 2.5C18.8978 2.10218 19.4374 1.87868 20 1.87868C20.5626 1.87868 21.1022 2.10218 21.5 2.5C21.8978 2.89783 22.1213 3.43739 22.1213 4C22.1213 4.56261 21.8978 5.10218 21.5 5.5L12 15L8 16L9 12L18.5 2.5Z"
+                stroke="#83888F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Изменить данные профиля
+        </button>
+      </div>
+    </div>
+  </section>
+  <section class="password">
+    <div class="container container--profile">
+      <div class="password__inner">
+        <h2 class="password__title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M21 2L19 4M19 4L22 7L18.5 10.5L15.5 7.5M19 4L15.5 7.5M11.39 11.61C11.9063 12.1195 12.3168 12.726 12.5978 13.3948C12.8787 14.0635 13.0246 14.7813 13.027 15.5066C13.0295 16.232 12.8884 16.9507 12.6119 17.6213C12.3354 18.2919 11.9291 18.9012 11.4161 19.4141C10.9032 19.9271 10.2939 20.3334 9.6233 20.6099C8.95268 20.8864 8.234 21.0275 7.50863 21.025C6.78327 21.0226 6.06554 20.8767 5.39679 20.5958C4.72804 20.3148 4.12147 19.9043 3.612 19.388C2.61013 18.3507 2.05576 16.9614 2.06829 15.5193C2.08082 14.0772 2.65925 12.6977 3.679 11.678C4.69874 10.6583 6.07821 10.0798 7.52029 10.0673C8.96238 10.0548 10.3517 10.6091 11.389 11.611L11.39 11.61ZM11.39 11.61L15.5 7.5"
+                stroke="#111111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Смена пароля
+        </h2>
+        <form class="password__form" method="post">
+          <ul class="password__list">
+            <li class="password__item">
+              <label class="label" for="current_password">Ваш текущий пароль</label>
+              <span class="error" id="current_error">Текущий пароль неверный</span>
+              <div class="password-field">
+                <input class="password__input input" id="current_password" name="current_password"
+                       required type="password" placeholder="Введите пароль"
+                >
+                <button class="password-field__btn" data-target="current_password" type="button"></button>
+              </div>
+            </li>
+            <li class="password__item">
+              <label class="label" for="new_password">Новый пароль</label>
+              <span class="error" id="new_error-one">Новый пароль должен отличаться от текущего</span>
+              <span class="error" id="new_error-two">Новый пароль должен совпадать с повторяющимся паролем</span>
+              <div class="password-field">
+                <input class="password__input input"
+                       id="new_password"
+                       name="new_password"
+                       required
+                       type="password"
+                       placeholder="Придумайте пароль"
+                       pattern="^[a-zA-Z0-9_]{8,60}$"
+                       title="Пароль может содержать только латиницу, цифры и символ подчеркивания, и должен быть от 8 до 60 символов в длину"
+                       maxlength="60"
+                >
+                <button class="password-field__btn" data-target="new_password" type="button"></button>
+              </div>
+            </li>
+            <li class="password__item">
+              <label class="label" for="confirm_password">Повторите пароль, чтобы не ошибиться</label>
+              <div class="password-field">
+                <input class="password__input input" id="confirm_password" name="confirm_password"
+                       required type="password" placeholder="Повторите пароль"
+                >
+                <button class="password-field__btn" data-target="confirm_password" type="button"></button>
+              </div>
+            </li>
+          </ul>
+          <p class="password__info">
+            После смены пароля произойдёт выход из аккаунта на всех устройствах
+          </p>
+          <button class="password__btn btn" type="submit">Сохранить</button>
+        </form>
       </div>
     </div>
   </section>
 </main>
+
+<div class="modal" id="edit-modal" tabindex="-1">
+  <button class="modal__close" type="button" id="close-edit">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6L18 18" stroke="#545860" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <h2 class="modal__title">
+    Редактирование профиля
+  </h2>
+  <form class="modal__form" id="formUpdateProfile" method="post">
+    <ul class="modal__list modal__list--top">
+      <li class="modal__item">
+        <label class="label" for="name">Имя</label>
+        <input
+            class="input password__input" id="name" required
+            minlength="2" maxlength="50"
+            type="text" name="name"
+            placeholder="Введите ваше имя"
+            pattern="[A-Za-zА-Яа-яЁё\s\-]+"
+            value="Артём Гонгдазе"
+            title="Разрешены только буквы, пробелы и дефисы"
+        >
+      </li>
+      <li class="modal__item">
+        <label class="label" for="email">Электронная почта</label>
+        <span class="error error--not-bottom" id="email-error">Почта уже используется другим пользователем</span>
+        <input
+            class="input password__input" type="email" required
+            maxlength="50"
+            id="email" name="email"
+            placeholder="Введите вашу почту"
+            value="test@gmail.com"
+        >
+      </li>
+    </ul>
+    <div class="modal__actions">
+      <button class="modal__cancel btn" type="button" id="close-edit-btn">Отменить изменения</button>
+      <button class="modal__complete btn" type="submit" id="complete-edit-btn">Сохранить</button>
+    </div>
+  </form>
+</div>
+
 </body>
-<script src="js/main.min.js" type="module" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="js/components/mobile-menu.js" defer></script>
-<script src="js/components/custom-select.js" defer></script>
-<script src="js/catalog.js" defer></script>
+<script src="js/components/password.js" defer></script>
+<script src="js/profile/update-avatar.js" type="module"></script>
+<script src="js/profile/update-data.js" type="module"></script>
